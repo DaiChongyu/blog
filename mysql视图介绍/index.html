@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>composer 报错php_pdo_firebird.dll找不到指定模块 | Daichong&#39;s Blog</title>
+  <title>mysql视图介绍 | Daichong&#39;s Blog</title>
   
   <meta name="keywords" content="戴崇博客,戴崇技术博客,php技术博客,hexo博客,web技术博客">
   
@@ -292,7 +292,7 @@
   
     <h1 class="title">
       <a href="">
-        composer 报错php_pdo_firebird.dll找不到指定模块
+        mysql视图介绍
       </a>
     </h1>
   
@@ -321,7 +321,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-04</p>
+    <p>2019-08-15</p>
   </a>
 </div>
 
@@ -329,14 +329,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>php扩展类</p>
-    </a>
-  </div>
-
 
           
         
@@ -373,11 +365,23 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <p>自从把php版本切换到7.0后，一旦使用composer就会出现php_pdo_firebird.dll找不到指定模块的错误，而且还不止这一个。百度查过很多资料最后都是没有解决，最后受到一篇博客的启发，尝试在php环境里卸载掉这些扩展，最后，，居然解决了？？<br><a id="more"></a><br>实际的原因是因为在PHP7中已经不再支持使用ext/mysql这个扩展了,把不支持的扩展直接给卸载掉就ok了。<br><blockquote><p>错误信息：</p>
-</blockquote><br><img src="/composer-报错php-pdo-firebird-dll找不到指定模块/img/pdo.png" class="报错"><br><blockquote><p>修改方法：</p>
-</blockquote><br>根据实际情况而定，我用的是phpstudy<br><img src="/composer-报错php-pdo-firebird-dll找不到指定模块/img/save.png" class="修改扩展"><br><blockquote><p>结果：</p>
-</blockquote><br><img src="/composer-报错php-pdo-firebird-dll找不到指定模块/img/composer.png" class="结果"></p>
-<p>最后又试了几次，发现只要是报错什么模块找不到，就直接卸载。</p>
+          <p></p><h2 style="margin: 0;">题外话</h2><br>&emsp;是的！我失业了！并且时间已经长达一周。寥寥无几的面试和面试询问的问题让我感到崩溃，甚至觉得现在的PHP已经凉透气了，想回郑州养老了，但我的理智告诉我不能这么轻易的放弃，找不到工作并不是语言的原因而是人的问题。<br>&emsp;有了这想法之后我在面试的空闲时间我疯狂的恶补有关于开发的技术知识，并把之后工作可能用到的给记录下来，希望在以后的面试中能造出火箭来。<br><a id="more"></a><p></p>
+<p></p><h2 style="margin: 0;">言归正传</h2><br><b>一、视图的含义</b><p></p>
+<p>&emsp;1.视图是从一个或多个表中导出的，视图的行为与表非常的相似，但视图是一个虚拟的表。在视图中可以使用<font color="#7070D8">Select</font>语句进行查询，也可以使用<font color="#7070D8">Insert</font>、<font color="#7070D8">Update</font>、<font color="#7070D8">Delete</font>，视图还可以从已经存在的视图的基础上定义（也就是视图上再做视图）。</p>
+<p>&emsp;2.视图定义好之后会存在数据库中，从视图看到的数据并不是视图真正存储在数据库中的数据，通过视图看到的数据只是存放在基本表中的数据。</p>
+<p>&emsp;<font color="#7070D8">3.对视图的操作和对表的操作是一样的，可以进行CURD。当修改通过视图看到的数据时，相对于的基本表的数据也会发生变化;同时，若基本表的数据发生变化，视图看到的数据也会发生变化。</font></p>
+<p><b>二、如何理解视图与基本表的关系呢？</b></p>
+<p>&emsp;有一张用户表：<table><th>ID</th><th>姓名</th><th>年龄</th><th>学校</th><tr><td>1</td><td>张三</td><td>20</td><td>清华</td></tr><tr><td>2</td><td>李四</td><td>20</td><td>北大</td></tr><tr><td>3</td><td>王二</td><td>20</td><td>北大</td></tr></table></p>
+<p>&emsp;创建一个基于用户表的视图，视图里的字段只有姓名和年龄，那么他们的关系就像在这个用户表上盖了一个木板，木板上留了个窗口，从这个窗口看进去只能看见姓名和年龄，这便是视图的作用和他们的关系。</p>
+<p><b>三、视图的作用</b></p>
+<p>&emsp;与直接从数据表中读取数据相比，视图具有以下优点：</p>
+<p>&emsp;&emsp;(1)、简单化</p>
+<p>&emsp;&emsp;&emsp;&emsp;：从视图看到的数据你可以自定义，也就是说看到的都是需要的数据。那些被经常使用查询的表可以创建一张视图，从而使使以后的操作不需要都假设全部的条件。</p>
+<p>&emsp;&emsp;(2)、安全性</p>
+<p>&emsp;&emsp;&emsp;&emsp;：假如数据表的某些字段是隐私的，不想被其他人看到。这时你就可以创建一张视图把隐私的字段过滤掉。</p>
+<p>&emsp;&emsp;(3)、逻辑数据独立性</p>
+<p>&emsp;&emsp;&emsp;&emsp;：视图可帮助用户屏蔽真实的表结构变化带来的影响。</p>
+<p>PS:下篇讲介绍视图如何创建、使用等。</p>
 
         </div>
         
@@ -389,10 +393,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-06-23T13:02:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-15T18:50:36+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年6月23日</p>
+    <p>最后更新于 2019年8月15日</p>
   </a>
 </div>
 
@@ -401,7 +405,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="../tags/composer/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>composer</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="../tags/mysql/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>mysql</p></a></div>
 
 
         
@@ -414,7 +418,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.daichongweb.com/composer-报错php-pdo-firebird-dll找不到指定模块/&title=composer 报错php_pdo_firebird.dll找不到指定模块 | Daichong's Blog&summary=自从把php版本切换到7.0后，一旦使用composer就会出现php_pdo_firebird.dll找不到指定模块的错误，而且还不止这一个。百度查过很多资料最后都是没有解决，最后受到一篇博客的启发，尝试在php环境里卸载掉这些扩展，最后，，居然解决了？？"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.daichongweb.com/mysql视图介绍/&title=mysql视图介绍 | Daichong's Blog&summary=题外话&emsp;是的！我失业了！并且时间已经长达一周。寥寥无几的面试和面试询问的问题让我感到崩溃，甚至觉得现在的PHP已经凉透气了，想回郑州养老了，但我的理智告诉我不能这么轻易的放弃，找不到工作并不是语言的原因而是人的问题。&emsp;有了这想法之后我在面试的空闲时间我疯狂的恶补有关于开发的技术知识，并把之后工作可能用到的给记录下来，希望在以后的面试中能造出火箭来。"
           
           >
           
@@ -426,7 +430,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.daichongweb.com/composer-报错php-pdo-firebird-dll找不到指定模块/&title=composer 报错php_pdo_firebird.dll找不到指定模块 | Daichong's Blog&summary=自从把php版本切换到7.0后，一旦使用composer就会出现php_pdo_firebird.dll找不到指定模块的错误，而且还不止这一个。百度查过很多资料最后都是没有解决，最后受到一篇博客的启发，尝试在php环境里卸载掉这些扩展，最后，，居然解决了？？"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.daichongweb.com/mysql视图介绍/&title=mysql视图介绍 | Daichong's Blog&summary=题外话&emsp;是的！我失业了！并且时间已经长达一周。寥寥无几的面试和面试询问的问题让我感到崩溃，甚至觉得现在的PHP已经凉透气了，想回郑州养老了，但我的理智告诉我不能这么轻易的放弃，找不到工作并不是语言的原因而是人的问题。&emsp;有了这想法之后我在面试的空闲时间我疯狂的恶补有关于开发的技术知识，并把之后工作可能用到的给记录下来，希望在以后的面试中能造出火箭来。"
           
           >
           
@@ -436,7 +440,7 @@
       
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADOklEQVR42u3awWrDQAwE0Pz/T6fXQhp3RutAvH4+leLaeQp0kLSPR3w9f12vvz++M/+rd+9tP9VpFzY2NvZF2M/D6/X1rz+/u//4zuP715/z7h5sbGzsXdnH4ZE/rnhxEEizckdBiI2NjX1jdt4kHJdj9sY8aLGxsbGx88flYdYOg1oSNjY29p3Zs2HNbOqeLAnyNcPHZ2nY2NjYX8/Ot6Lf//NH9tvY2NjYX8x+LlztMZ22uO2Iqvjk2NjY2Bux25DIh/stKWlUcnD0ZWBjY2NvxJ4d0GkP0OTHcWb354GHjY2NvR87iZBZaLWj/PU2Iy86NjY29h7s2fC9ja7kmE4SdXl8RrM0bGxs7C3Ys0BaYc/As+OeRcRiY2NjX5w9GxWtDJhmg6Q8CLGxsbHvw26HMvma9hPHbtpFLzY2NvYd2O3gfnYQpw3Cs0r8T1GwsbGxt2DPRj/tinfWMLTNTz54wsbGxt6VnY9vzl0DrxzZyRcY2NjY2Luy2yjKB/orq9/ZGKttbLCxsbH3YK/ET7s8yIMnGS3NFg/Y2NjYd2O3//PzwiV3rjRC/4QoNjY29tbsWfCsHMGZjbRmhX6cm7fY2NjYX8lO2o/2IE7b2CTj/nb1i42Njb0re2lRWi59V1YCbXDODhJhY2NjX5Hdtgfrjcr6QrdtVP54FzY2NvZG7PY/fNuQ5CP7dqlw7leCjY2NfXV2OxjK25V89JOUb/aVvA0wbGxs7I3Y7fg+H+7na9rZInm2csbGxsbeiZ0ERv5xV4KnDb92vRElNjY2NvZl2WcdjskbgJVFcjtUeuS5io2NjX1Bdjseap/Qxt6s3MNPjo2Njb0FOw+wfCmbR+Bs2bBSdGxsbOz92LNFb96WrDQ/K4EatSXY2NjYW7Cf5bWyvp29pV0kRCsEbGxs7I3Y+ZWf/cnLdNZU7KzAw8bGxr4uexYnyRPyUuYlmI2u6oYEGxsb+4LsNhhWFgPtEZ9jdlLcP56MjY2NfUt2uwxoy3f83pW19FKAYWNjY2/Ezg/K5CXI1wB54aI4xMbGxt6O/emhUj5mmhWlPkiEjY2NvRF7NppJxkxJzLRlyn9/wiEebGxs7G9n/wCmSk8CDmTNKAAAAABJRU5ErkJggg=='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNUlEQVR42u3aQXLCMAwFUO5/abptp3X4sgzT2C8rBoLjl4VGsvR4xNfz8vp+z/Xn0ZqjbxZfGBgYt2XkW/z9gOt/je4ZUa+fe/0UDAyMExijCDa6J/8mD77VYI2BgYGRBMdOyO6nlRgYGBjJctV1rsMxBgYGxjUjP0qrnnrlR2wfqsUxMDBuyMg39/nPb+lvYGBg3IrxLF75UVpeAM/t5Mc6GBgYWzOqBWoVmayWF70vVsDAwNiU0T/uz9uZCSYJ63/ciYGBcQBj1ZDEqgO4auqJgYFxDqNTvibBN08WkwbAZC2OgYFxW0Y5wMVpZbLRamPgRRWOgYGxHSPfYlLodobJOqknBgbGCYy5kYvqQVt1+CyBLRgOw8DA+PeM6uhD9d0k5Wv+4qKZEQwMjK0ZSfjrwOYGMqJXhoGBsTXjfeXlqmGLzjAHBgbG3ow8WczL2rxk7RzeYWBg7MeYK2L7xW21DH6xcwwMjK0Z1TSuWmRWX0E+tNHKRjEwMG7LmDt0W5VoVtsJw7EwDAyMAxj5sdfcmGm1lC2MyWJgYBzA6DQGOu3PuYHXwg8YGBjbMZLis9o8qLInW54YGBibMp7FKw+meaGbH8mVp9swMDC2YFTHLzojETkvX3lyigQDA+OGjGqQ7TQJVgVcDAyMMxnVwNc54u+kesPXh4GBgdFoOvbTzULkxsDAwCgmeYXuRHGHCwIuBgbGDRlJEVsdOc1bBXP3YGBgnMNYlXdVS99+vwIDA+MAxhdmFA3LaFVfKQAAAABJRU5ErkJggg=='>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
         
@@ -446,7 +450,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://www.daichongweb.com/composer-报错php-pdo-firebird-dll找不到指定模块/&title=composer 报错php_pdo_firebird.dll找不到指定模块 | Daichong's Blog&summary=自从把php版本切换到7.0后，一旦使用composer就会出现php_pdo_firebird.dll找不到指定模块的错误，而且还不止这一个。百度查过很多资料最后都是没有解决，最后受到一篇博客的启发，尝试在php环境里卸载掉这些扩展，最后，，居然解决了？？"
+          href="http://service.weibo.com/share/share.php?url=http://www.daichongweb.com/mysql视图介绍/&title=mysql视图介绍 | Daichong's Blog&summary=题外话&emsp;是的！我失业了！并且时间已经长达一周。寥寥无几的面试和面试询问的问题让我感到崩溃，甚至觉得现在的PHP已经凉透气了，想回郑州养老了，但我的理智告诉我不能这么轻易的放弃，找不到工作并不是语言的原因而是人的问题。&emsp;有了这想法之后我在面试的空闲时间我疯狂的恶补有关于开发的技术知识，并把之后工作可能用到的给记录下来，希望在以后的面试中能造出火箭来。"
           
           >
           
@@ -474,16 +478,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="../hexo-github-coding搭建博客-绑定多域名/" rel="prev" title="【原创】hexo+github+coding搭建博客(绑定多域名)">
+                                <a href="../mysql视图的使用方法/" rel="prev" title="mysql视图的使用方法">
                                   
-                                      【原创】hexo+github+coding搭建博客(绑定多域名)
+                                      mysql视图的使用方法
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="../tags/hexo/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>hexo</a>
+                                    <a class="tag" href="../tags/mysql/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>mysql</a>
                                 </h6>
                             
                         </span>
@@ -494,16 +498,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="../sublime-text3-不能安装插件/" rel="prev" title="sublime text3 不能安装插件">
+                                <a href="../charles过滤数据包/" rel="prev" title="charles过滤数据包">
                                     
-                                        sublime text3 不能安装插件
+                                        charles过滤数据包
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="../tags/sublime/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>sublime</a>
+                                    <a class="tag" href="../tags/开发工具/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>开发工具</a>
                                 </h6>
                             
                         </span>
@@ -548,7 +552,7 @@
 
   <script>
     window.subData = {
-      title: 'composer 报错php_pdo_firebird.dll找不到指定模块',
+      title: 'mysql视图介绍',
       tools: true
     }
   </script>
@@ -618,6 +622,20 @@
           
           
             
+  <section class='widget toc-wrapper'>
+    
+<header class='material'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content material'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">题外话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">言归正传</span></a></li></ol>
+    </div>
+  </section>
+
 
           
         

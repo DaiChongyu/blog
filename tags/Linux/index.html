@@ -1009,3 +1009,46 @@ console.log([
   </script>
 </body>
 </html>
+d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = "left:" + d[e].x + "px;top:" + d[e].y + "px;opacity:" + d[e].alpha + ";transform:scale(" + d[e].scale + "," + d[e].scale + ") rotate(45deg);background:" + d[e].color + ";z-index:99999");
+          requestAnimationFrame(r) }
+
+      function o() { var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function(e) { t && t(), i(e) } }
+
+      function i(e) { var a = t.createElement("div");
+          a.className = "heart", d.push({ el: a, x: e.clientX - 5, y: e.clientY - 5, scale: 1, alpha: 1, color: s() }), t.body.appendChild(a) }
+
+      function c(e) { var a = t.createElement("style");
+          a.type = "text/css"; try { a.appendChild(t.createTextNode(e)) } catch (t) { a.styleSheet.cssText = e } t.getElementsByTagName("head")[0].appendChild(a) }
+
+      function s() { return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")" } var d = [];
+      e.requestAnimationFrame = function() { return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(e) { setTimeout(e, 1e3 / 60) } }(), n() }(window, document);
+  (function() {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+  var dictum_arr = ['人生就像风筝，必须迎风而上！', '物欲横流的社会,人心冷漠无情。', '来句评论再走吧！总要留下点什么。'];
+  var dictum_index = Math.floor(Math.random() * dictum_arr.length + 1);
+  let i = 0;
+  let timer = null;
+  let str = dictum_arr[dictum_index];
+  function typing(){
+    if (i <= str.length) {
+          $('.widget.plain .content.pure p').html(str.slice(0, i++) + '_')
+          timer = setTimeout('typing()', 150)
+      } else {
+          $('.widget.plain .content.pure p').html(str)
+          clearTimeout(timer)
+      }
+  }
+  typing();
+  </script>
+</body>
+</html>

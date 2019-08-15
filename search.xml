@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mysql视图的使用方法]]></title>
+    <url>%2Fmysql%E8%A7%86%E5%9B%BE%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[&emsp;上篇简单的介绍了视图的概念，那么这篇将告诉大家如何创建、修改、删除视图，也就是视图的基本操作了！ 一、在单表上创建视图12345678# 创建表 usercreate table user (id int,name varchar(10),age tinyint(3));# 插入数据insert into user values(1,&apos;张三&apos;,20),(2,&apos;李四&apos;,20);# 创建视图-并计算他们两年之后多少岁create view view_user as select id,name,age+2 as age from user; # 第二种写法create view view_user_1(user_id,user_name,user_age) as select id,name,age from user;得到结果:idnameage1张三222李四223王二22 user_iduser_nameuser_age1张三222李四223王二22从这两种写法可以看出，在视图上是可以使用计算的，虽然两个视图中字段名不同，但数据确实相同的。因此在使用视图的时候，用户根本接触不到实际表中的结构和数据，从而保证了数据库的安全。二、在多表上创建视图12345678# 创建表 user、schoolcreate table user (id int, name varchar(10), age tinyint(3), school_id int);create table school (id int, name varchar(10));# 插入数据 insert into user values(1,&apos;张三&apos;,20,1),(2,&apos;李四&apos;,20,2);insert into school values(1,&apos;清华&apos;),(2,&apos;北大&apos;);# 创建视图create view view_user_school(user_id,user_name,user_school) as select user.id,user.name school.name from user,school where user.school_id = school.id;通过视图看到的结果：user_iduser_nameuser_school1张三清华2李四北大 三、查看视图1desc 视图名;通过这个命令可以看出视图的字段定义、字段的数据类型、是否为空、是否为主键/外键、默认值和额外信息。1select table status like &apos;视图名&apos;;通过这个命令可看出存储引擎、创建时间、Comment。1show create view &apos;视图名&apos;;通过这个命令可以看出视图的名称、创建视图的语句等信息。 四、修改视图1create or replace view view_user as select id,user,name,age from user; 1alert view view_user as select id,user,name,age from user; 五、更新视图12update view_user set age=100 where id=1;delete from view_user where id=1;当视图更新的时候相对应的基础表也会被更新，但如果是多表创建、使用了计算或者是聚合函数都是无法修改/删除成功的，并且会报错。 六、删除视图1drop view if exists view_user; 总结： &emsp;1.两者的区别 &emsp;&emsp;(1) 视图是已经编译好的sql语句，是基于sql语句的结果集形成的可视化表，而表不是。&emsp;&emsp;(2) 视图没有实际的物理记录，而表有。&emsp;&emsp;(3) 表是内容，视图是窗口。&emsp;&emsp;(4) 表占用物理空间而视图不占用。&emsp;&emsp;(5) 视图是查看数据表的一种方法，从安全角度上来说视图可以防止用户接触到数据表，使用户不知道表结构。&emsp;&emsp;(6) 表属于全局模式中的表，是实表，视图是局部模式的表，是虚表。&emsp;&emsp;(7) 视图的简历和删除只会影响到视图的本身，不影响对应表的基本数据。 &emsp;2.两者的关系 &emsp;&emsp;(1) 视图是建立在基本表纸上的表，它的结构都来源于基本表。无基本表视图将无法建立，视图是基本表的抽象和在逻辑意义上建立的新关系。]]></content>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mysql视图介绍]]></title>
+    <url>%2Fmysql%E8%A7%86%E5%9B%BE%E4%BB%8B%E7%BB%8D%2F</url>
+    <content type="text"><![CDATA[题外话&emsp;是的！我失业了！并且时间已经长达一周。寥寥无几的面试和面试询问的问题让我感到崩溃，甚至觉得现在的PHP已经凉透气了，想回郑州养老了，但我的理智告诉我不能这么轻易的放弃，找不到工作并不是语言的原因而是人的问题。&emsp;有了这想法之后我在面试的空闲时间我疯狂的恶补有关于开发的技术知识，并把之后工作可能用到的给记录下来，希望在以后的面试中能造出火箭来。 言归正传一、视图的含义 &emsp;1.视图是从一个或多个表中导出的，视图的行为与表非常的相似，但视图是一个虚拟的表。在视图中可以使用Select语句进行查询，也可以使用Insert、Update、Delete，视图还可以从已经存在的视图的基础上定义（也就是视图上再做视图）。 &emsp;2.视图定义好之后会存在数据库中，从视图看到的数据并不是视图真正存储在数据库中的数据，通过视图看到的数据只是存放在基本表中的数据。 &emsp;3.对视图的操作和对表的操作是一样的，可以进行CURD。当修改通过视图看到的数据时，相对于的基本表的数据也会发生变化;同时，若基本表的数据发生变化，视图看到的数据也会发生变化。 二、如何理解视图与基本表的关系呢？ &emsp;有一张用户表：ID姓名年龄学校1张三20清华2李四20北大3王二20北大 &emsp;创建一个基于用户表的视图，视图里的字段只有姓名和年龄，那么他们的关系就像在这个用户表上盖了一个木板，木板上留了个窗口，从这个窗口看进去只能看见姓名和年龄，这便是视图的作用和他们的关系。 三、视图的作用 &emsp;与直接从数据表中读取数据相比，视图具有以下优点： &emsp;&emsp;(1)、简单化 &emsp;&emsp;&emsp;&emsp;：从视图看到的数据你可以自定义，也就是说看到的都是需要的数据。那些被经常使用查询的表可以创建一张视图，从而使使以后的操作不需要都假设全部的条件。 &emsp;&emsp;(2)、安全性 &emsp;&emsp;&emsp;&emsp;：假如数据表的某些字段是隐私的，不想被其他人看到。这时你就可以创建一张视图把隐私的字段过滤掉。 &emsp;&emsp;(3)、逻辑数据独立性 &emsp;&emsp;&emsp;&emsp;：视图可帮助用户屏蔽真实的表结构变化带来的影响。 PS:下篇讲介绍视图如何创建、使用等。]]></content>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[charles过滤数据包]]></title>
     <url>%2Fcharles%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE%E5%8C%85%2F</url>
     <content type="text"><![CDATA[1.1 设置过滤：找到【Proxy】-【Recording Setting】点击Add添加过滤规则： （1）Protocol 选择过滤的协议 （2）Host 填写IP或网址 （3）Port 填写端口 *为全部端口]]></content>
