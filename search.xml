@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[mysql视图介绍]]></title>
     <url>%2Fmysql%E8%A7%86%E5%9B%BE%E4%BB%8B%E7%BB%8D%2F</url>
-    <content type="text"><![CDATA[题外话&emsp;是的！我失业了！并且时间已经长达一周。寥寥无几的面试和面试询问的问题让我感到崩溃，甚至觉得现在的PHP已经凉透气了，想回郑州养老了，但我的理智告诉我不能这么轻易的放弃，找不到工作并不是语言的原因而是人的问题。&emsp;有了这想法之后我在面试的空闲时间我疯狂的恶补有关于开发的技术知识，并把之后工作可能用到的给记录下来，希望在以后的面试中能造出火箭来。 言归正传一、视图的含义 &emsp;1.视图是从一个或多个表中导出的，视图的行为与表非常的相似，但视图是一个虚拟的表。在视图中可以使用Select语句进行查询，也可以使用Insert、Update、Delete，视图还可以从已经存在的视图的基础上定义（也就是视图上再做视图）。 &emsp;2.视图定义好之后会存在数据库中，从视图看到的数据并不是视图真正存储在数据库中的数据，通过视图看到的数据只是存放在基本表中的数据。 &emsp;3.对视图的操作和对表的操作是一样的，可以进行CURD。当修改通过视图看到的数据时，相对于的基本表的数据也会发生变化;同时，若基本表的数据发生变化，视图看到的数据也会发生变化。 二、如何理解视图与基本表的关系呢？ &emsp;有一张用户表：ID姓名年龄学校1张三20清华2李四20北大3王二20北大 &emsp;创建一个基于用户表的视图，视图里的字段只有姓名和年龄，那么他们的关系就像在这个用户表上盖了一个木板，木板上留了个窗口，从这个窗口看进去只能看见姓名和年龄，这便是视图的作用和他们的关系。 三、视图的作用 &emsp;与直接从数据表中读取数据相比，视图具有以下优点： &emsp;&emsp;(1)、简单化 &emsp;&emsp;&emsp;&emsp;：从视图看到的数据你可以自定义，也就是说看到的都是需要的数据。那些被经常使用查询的表可以创建一张视图，从而使使以后的操作不需要都假设全部的条件。 &emsp;&emsp;(2)、安全性 &emsp;&emsp;&emsp;&emsp;：假如数据表的某些字段是隐私的，不想被其他人看到。这时你就可以创建一张视图把隐私的字段过滤掉。 &emsp;&emsp;(3)、逻辑数据独立性 &emsp;&emsp;&emsp;&emsp;：视图可帮助用户屏蔽真实的表结构变化带来的影响。 PS:下篇讲介绍视图如何创建、使用等。]]></content>
+    <content type="text"><![CDATA[题外话&emsp;是的！我失业了！并且时间已经长达一周。寥寥无几的面试和面试询问的问题让我感到崩溃，甚至觉得现在的PHP已经凉透气了，想回郑州养老了，但我的理智告诉我不能这么轻易的放弃，找不到工作并不是语言的原因而是人的问题。 &emsp;有了这想法之后我在面试的空闲时间我疯狂的恶补有关于开发的技术知识，并把之后工作可能用到的给记录下来，希望在以后的面试中能造出火箭来。 言归正传一、视图的含义 &emsp;1.视图是从一个或多个表中导出的，视图的行为与表非常的相似，但视图是一个虚拟的表。在视图中可以使用Select语句进行查询，也可以使用Insert、Update、Delete，视图还可以从已经存在的视图的基础上定义（也就是视图上再做视图）。 &emsp;2.视图定义好之后会存在数据库中，从视图看到的数据并不是视图真正存储在数据库中的数据，通过视图看到的数据只是存放在基本表中的数据。 &emsp;3.对视图的操作和对表的操作是一样的，可以进行CURD。当修改通过视图看到的数据时，相对于的基本表的数据也会发生变化;同时，若基本表的数据发生变化，视图看到的数据也会发生变化。 二、如何理解视图与基本表的关系呢？ &emsp;有一张用户表：ID姓名年龄学校1张三20清华2李四20北大3王二20北大 &emsp;创建一个基于用户表的视图，视图里的字段只有姓名和年龄，那么他们的关系就像在这个用户表上盖了一个木板，木板上留了个窗口，从这个窗口看进去只能看见姓名和年龄，这便是视图的作用和他们的关系。 三、视图的作用 &emsp;与直接从数据表中读取数据相比，视图具有以下优点： &emsp;&emsp;(1)、简单化 &emsp;&emsp;&emsp;&emsp;：从视图看到的数据你可以自定义，也就是说看到的都是需要的数据。那些被经常使用查询的表可以创建一张视图，从而使使以后的操作不需要都假设全部的条件。 &emsp;&emsp;(2)、安全性 &emsp;&emsp;&emsp;&emsp;：假如数据表的某些字段是隐私的，不想被其他人看到。这时你就可以创建一张视图把隐私的字段过滤掉。 &emsp;&emsp;(3)、逻辑数据独立性 &emsp;&emsp;&emsp;&emsp;：视图可帮助用户屏蔽真实的表结构变化带来的影响。 PS:下篇讲介绍视图如何创建、使用等。]]></content>
       <tags>
         <tag>mysql</tag>
       </tags>
@@ -335,19 +335,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux重装系统后ssh连接认证的问题]]></title>
-    <url>%2FLinux%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8Essh%E8%BF%9E%E6%8E%A5%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[[命令行报错提示]12345678910111213141516171819202122232425@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!Someone could be eavesdropping on you right now (man-in-the-middle attack)!It is also possible that a host key has just been changed.The fingerprint for the ECDSA key sent by the remote host isSHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.Please contact your system administrator.Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.Host key verification failed. 对于一个小白来说，这个是完全看不懂的，下面就告诉大家如何解决这个问题。 首先用ssh第一次连接sever,sever会生成一个公钥和一个私钥，私钥存在连接方的本地，系统重装后sever会重新生成一个公钥，然后连接方的私钥已经和sever的公钥不匹配，导致报错无法登录。 解决方法： ssh-keygen -R xx.xx.xx.xx 后面跟ip即可删除指定服务器的公钥文件，再次连接时重新生成，并覆盖掉连接方的私钥。]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[liunx重装系统后ssh连接认证的问题]]></title>
     <url>%2Fliunx%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8Essh%E8%BF%9E%E6%8E%A5%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[[命令行报错提示]12345678910111213141516171819202122232425@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!Someone could be eavesdropping on you right now (man-in-the-middle attack)!It is also possible that a host key has just been changed.The fingerprint for the ECDSA key sent by the remote host isSHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.Please contact your system administrator.Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.Host key verification failed. 对于一个小白来说，这个是完全看不懂的，下面就告诉大家如何解决这个问题。 首先用ssh第一次连接sever,sever会生成一个公钥和一个私钥，私钥存在连接方的本地，系统重装后sever会重新生成一个公钥，然后连接方的私钥已经和sever的公钥不匹配，导致报错无法登录。 解决方法： ssh-keygen -R xx.xx.xx.xx 后面跟ip即可删除指定服务器的公钥文件，再次连接时重新生成，并覆盖掉连接方的私钥。]]></content>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[linux重装系统后ssh连接认证的问题]]></title>
+    <url>%2FLinux%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8Essh%E8%BF%9E%E6%8E%A5%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[[命令行报错提示]12345678910111213141516171819202122232425@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!Someone could be eavesdropping on you right now (man-in-the-middle attack)!It is also possible that a host key has just been changed.The fingerprint for the ECDSA key sent by the remote host isSHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.Please contact your system administrator.Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.Host key verification failed. 对于一个小白来说，这个是完全看不懂的，下面就告诉大家如何解决这个问题。 首先用ssh第一次连接sever,sever会生成一个公钥和一个私钥，私钥存在连接方的本地，系统重装后sever会重新生成一个公钥，然后连接方的私钥已经和sever的公钥不匹配，导致报错无法登录。 解决方法： ssh-keygen -R xx.xx.xx.xx 后面跟ip即可删除指定服务器的公钥文件，再次连接时重新生成，并覆盖掉连接方的私钥。]]></content>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
