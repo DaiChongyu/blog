@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>phpExcel分析复杂表格数据(远程文件) | Daichong&#39;s Blog</title>
+  <title>php-Sphinx搜索引擎 | Daichong&#39;s Blog</title>
   
   <meta name="keywords" content="戴崇博客,戴崇技术博客,php技术博客,hexo博客,web技术博客">
   
@@ -292,7 +292,7 @@
   
     <h1 class="title">
       <a href="">
-        phpExcel分析复杂表格数据(远程文件)
+        php-Sphinx搜索引擎
       </a>
     </h1>
   
@@ -321,7 +321,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-02-26</p>
+    <p>2019-08-16</p>
   </a>
 </div>
 
@@ -329,14 +329,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>php扩展类</p>
-    </a>
-  </div>
-
 
           
         
@@ -373,17 +365,29 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <p>phpExcel是一个专门操作数据表格的类，他可以导入、导出excel表格中的数据，简单、漂亮，非常适合导入、导出、分析数据来使用。</p>
-<p>以下代码主要为了实现从阿里OSS上获取数据表格，并分析表格数据导入数据库，唯一不同的是这个表格是不规则，分析数据的话相对来数复杂了一些，废话不多少，下面直接介绍如何处理这种复杂的表格：<br><a id="more"></a><br><blockquote><p>第一步：分析表格</p>
-</blockquote><br><img src="/phpExcel分析复杂表格数据-远程文件/img/1.png"><br>经过处理，把这个底色为白色的表格处理成正常的形式<br><img src="/phpExcel分析复杂表格数据-远程文件/img/2.png"><br>经过处理可以发现，这个表格的数据是有规律的。<br>坐标B6是账号，C6是房号，D6是房类，一次类推，每行不同的数据都是由不同字母和数字的组合。</p>
-<p>特殊的一点就是房价在行数据的下一行，通过观察可以发现，每行的真实数据的列坐标是偶数，相对应的房价都是在奇数上，这样一分析就可以找到方法分析数据了。</p>
-<blockquote><p>第二步：实现代码</p>
-</blockquote>
-<figure class="highlight php"><figcaption><span>实现代码</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'../excel/Classes/PHPExcel/IOFactory.php'</span>);<span class="comment">//静态</span></span><br><span class="line">file_put_contents(<span class="string">'abc.xls'</span>,file_get_contents(<span class="string">'https://www.baidu.com/20190226/caf55125b3f510b9242235bfa7f06212.xls'</span>));</span><br><span class="line"></span><br><span class="line">$filePath = <span class="string">'abc.xls'</span>;</span><br><span class="line">$fileType = PHPExcel_IOFactory::identify($filePath);<span class="comment">//检测文件类型</span></span><br><span class="line">$fileRead = PHPExcel_IOFactory::createReader($fileType);<span class="comment">//读取文件</span></span><br><span class="line">$excelObj = $fileRead-&gt;load($filePath);</span><br><span class="line">$sheet = $excelObj-&gt;getActiveSheet();</span><br><span class="line">$highestRow = $sheet-&gt;getHighestRow();<span class="comment">//行数</span></span><br><span class="line">$highestColumn = $sheet-&gt;getHighestColumn();<span class="comment">//列数</span></span><br><span class="line"></span><br><span class="line">$dataSet = <span class="keyword">array</span>();<span class="comment">//数据</span></span><br><span class="line"><span class="comment">//这里是从第6行开始，因为上5行都是空的，直接过滤</span></span><br><span class="line"><span class="keyword">for</span>($row = <span class="number">6</span>;$row&lt;=$highestRow<span class="number">-4</span>;$row++)&#123;</span><br><span class="line">    $dataSet[$row] = <span class="keyword">array</span>();</span><br><span class="line">    <span class="comment">//列从B开始A也是空的</span></span><br><span class="line">	<span class="keyword">for</span>($column=<span class="string">"B"</span>;$column&lt;=$highestColumn;$column++)&#123;</span><br><span class="line">		<span class="comment">//如果列坐标是F(房价) and 是奇数行，说明已经到房价那一行了</span></span><br><span class="line">		<span class="keyword">if</span>($column==<span class="string">'F'</span> &amp;&amp; $row%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="comment">//列坐标是F 行坐标7 7-1 就是上一行,这里的意思就是上一行的F里的值等于下一行的F的值</span></span><br><span class="line">			$dataSet[$row<span class="number">-1</span>][$column] = $sheet-&gt;getCell($column.$row)-&gt;getValue();</span><br><span class="line"></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="comment">//如果列坐标是L和N说明是时间</span></span><br><span class="line">			<span class="keyword">if</span>($column ==<span class="string">'L'</span> || $column == <span class="string">'N'</span>)&#123;</span><br><span class="line">				$time = $sheet-&gt;getCell($column.$row)-&gt;getValue();</span><br><span class="line">				<span class="comment">//转化时间</span></span><br><span class="line">				$dataSet[$row][$column] = date(<span class="string">'Y-m-d H:i:s'</span>,PHPExcel_Shared_Date::ExcelToPHP($time));</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				$dataSet[$row][$column] = $sheet-&gt;getCell($column.$row)-&gt;getValue();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//删除已经合并过的奇数行</span></span><br><span class="line">	<span class="keyword">if</span>($row%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">unset</span>($dataSet[$row]);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">//删除空数组</span></span><br><span class="line">		$dataSet[$row] = array_filter($dataSet[$row]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;pre&gt;"</span>;</span><br><span class="line">print_r($dataSet);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote><p>第三步：查看结果</p>
-</blockquote>
-<figure class="highlight php"><figcaption><span>打印数据</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Array</span></span><br><span class="line">(</span><br><span class="line">    [<span class="number">6</span>] =&gt; <span class="keyword">Array</span></span><br><span class="line">        (</span><br><span class="line">            [B] =&gt; <span class="number">233756</span></span><br><span class="line">            [C] =&gt; <span class="number">1</span>AC65</span><br><span class="line">            [D] =&gt; DDYG</span><br><span class="line">            [G] =&gt; 戴</span><br><span class="line">            [L] =&gt; <span class="number">2019</span><span class="number">-02</span><span class="number">-04</span> <span class="number">12</span>:<span class="number">42</span>:<span class="number">00</span></span><br><span class="line">            [N] =&gt; <span class="number">2019</span><span class="number">-03</span><span class="number">-06</span> <span class="number">12</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">            [F] =&gt; <span class="number">400</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    [<span class="number">8</span>] =&gt; <span class="keyword">Array</span></span><br><span class="line">        (</span><br><span class="line">            [B] =&gt; <span class="number">233758</span></span><br><span class="line">            [C] =&gt; <span class="number">1</span>BC65</span><br><span class="line">            [D] =&gt; DDYG</span><br><span class="line">            [G] =&gt; 戴</span><br><span class="line">            [H] =&gt; <span class="number">48</span>+<span class="number">456</span>+<span class="number">844654654</span></span><br><span class="line">            [L] =&gt; <span class="number">2019</span><span class="number">-02</span><span class="number">-04</span> <span class="number">12</span>:<span class="number">44</span>:<span class="number">00</span></span><br><span class="line">            [N] =&gt; <span class="number">2019</span><span class="number">-03</span><span class="number">-06</span> <span class="number">12</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">            [F] =&gt; <span class="number">400</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    [<span class="number">10</span>] =&gt; <span class="keyword">Array</span></span><br><span class="line">        (</span><br><span class="line">            [B] =&gt; <span class="number">241572</span></span><br><span class="line">            [C] =&gt; E55b</span><br><span class="line">            [D] =&gt; DDYG</span><br><span class="line">            [G] =&gt; 戴</span><br><span class="line">            [L] =&gt; <span class="number">2019</span><span class="number">-02</span><span class="number">-16</span> <span class="number">09</span>:<span class="number">40</span>:<span class="number">00</span></span><br><span class="line">            [N] =&gt; <span class="number">2019</span><span class="number">-03</span><span class="number">-30</span> <span class="number">12</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">            [F] =&gt; <span class="number">0</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    [<span class="number">12</span>] =&gt; <span class="keyword">Array</span></span><br><span class="line">        (</span><br><span class="line">            [B] =&gt; <span class="number">246484</span></span><br><span class="line">            [C] =&gt; <span class="number">2</span>AC52</span><br><span class="line">            [D] =&gt; YGTYF</span><br><span class="line">            [G] =&gt; 戴</span><br><span class="line">            [H] =&gt; <span class="number">476</span>+<span class="number">5456456156415641</span></span><br><span class="line">            [I] =&gt; 博客</span><br><span class="line">            [L] =&gt; <span class="number">2019</span><span class="number">-02</span><span class="number">-25</span> <span class="number">17</span>:<span class="number">23</span>:<span class="number">00</span></span><br><span class="line">            [N] =&gt; <span class="number">2019</span><span class="number">-02</span><span class="number">-27</span> <span class="number">12</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">            [F] =&gt; <span class="number">362</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    [<span class="number">14</span>] =&gt; <span class="keyword">Array</span></span><br><span class="line">        (</span><br><span class="line">            [B] =&gt; <span class="number">246485</span></span><br><span class="line">            [C] =&gt; <span class="number">2</span>BC52</span><br><span class="line">            [D] =&gt; YGTYF</span><br><span class="line">            [G] =&gt; 戴</span><br><span class="line">            [H] =&gt; <span class="number">415645156</span></span><br><span class="line">            [I] =&gt; 博客</span><br><span class="line">            [L] =&gt; <span class="number">2019</span><span class="number">-02</span><span class="number">-25</span> <span class="number">17</span>:<span class="number">24</span>:<span class="number">00</span></span><br><span class="line">            [N] =&gt; <span class="number">2019</span><span class="number">-02</span><span class="number">-27</span> <span class="number">12</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">            [F] =&gt; <span class="number">362</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    [<span class="number">16</span>] =&gt; <span class="keyword">Array</span></span><br><span class="line">        (</span><br><span class="line">            [B] =&gt; <span class="number">246486</span></span><br><span class="line">            [C] =&gt; D86a</span><br><span class="line">            [D] =&gt; DDYG</span><br><span class="line">            [G] =&gt; 戴</span><br><span class="line">            [H] =&gt; <span class="number">156</span>+<span class="number">1112</span></span><br><span class="line">            [L] =&gt; <span class="number">2019</span><span class="number">-02</span><span class="number">-25</span> <span class="number">17</span>:<span class="number">25</span>:<span class="number">00</span></span><br><span class="line">            [N] =&gt; <span class="number">2019</span><span class="number">-02</span><span class="number">-28</span> <span class="number">12</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">            [P] =&gt; 业主自主</span><br><span class="line">            [F] =&gt; <span class="number">0</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>很完美，如有其它需要可根据代码调整。</p>
+          <p><b>一、Sphinx是什么？</b></p>
+<p>&emsp;是一个基于SQL的全文检索引擎，可以结合MySQL,PostgreSQL做全文搜索，它可以提供比数据库本身更专业的搜索功能，使得应用程序更容易实现专业化的全文检索。Sphinx特别为一些脚本语言设计搜索API接口，如Java，PHP，Python，Perl，Ruby等，同时为MySQL也设计了一个存储引擎插件。 <em>—百度百科</em>    </p>
+<p>&emsp;Sphinx 单一索引最大可包含1亿条记录，在1千万条记录情况下的查询速度为0.x秒（毫秒级）。Sphinx创建索引的速度为：创建100万条记录的索引只需 3～4分钟，创建1000万条记录的索引可以在50分钟内完成，而只包含最新10万条记录的增量索引，重建一次只需几十秒。<em>—百度百科</em><br><a id="more"></a></p>
+<p><b>二、Sphinx的特性是什么？</b></p>
+<p>&emsp;高速索引 （在新款CPU上，近10 MB/秒）; 高速搜索 (2-4G的文本量中平均查询速度不到0.1秒); 高可用性 （单CPU上最大可支持100 GB的文本，100M文档）; 提供良好的相关性排名 支持分布式搜索； 提供文档摘要生成； 提供从MySQL内部的插件式存储引擎上搜索 支持布尔，短语， 和近义词查询； 支持每个文档多个全文检索域（默认最大32个）; 支持每个文档多属性； 支持断词； 支持单字节编码与UTF-8编码；</p>
+<p><b>三、Sphinx安装与配置</b> <em>–windows环境</em></p>
+<p>&emsp;1.万物不离其宗，第一步肯定是安装啦！<a href="http://sphinxsearch.com/downloads/current/" target="_blank" rel="noopener">下载地址</a> <em>—具体的安装步骤就不一一介绍了</em></p>
+<p>&emsp;2.解压之后会看到 <font color="#ff5722">api、bin、doc、etc、misc、src </font>六个文件。 <em>–windows环境可能和其他环境不同</em></p>
+<p>&emsp;3.在同级目录下新建<font color="#ff5722">data、log</font>两个文件。 <em>–data:数据文件、log:检索的日志文件</em></p>
+<p>&emsp;4.复制<font color="#ff5722">etc</font>目录下的<font color="#ff5722">sphinx-min.conf.dist</font>到<font color="#ff5722">bin</font>目录修改文件名为<font color="#ff5722">sphinx.conf</font>。修改配置为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">source school # school 名字是随意起的</span><br><span class="line">&#123;</span><br><span class="line">	type			= mysql</span><br><span class="line"></span><br><span class="line">	sql_host		= localhost</span><br><span class="line">	sql_user		= root</span><br><span class="line">	sql_pass		= root</span><br><span class="line">	sql_db			= test</span><br><span class="line">	sql_port		= 3306</span><br><span class="line">	# 设置数据库字符集</span><br><span class="line">	sql_query_pre   = SET NAMES utf8 </span><br><span class="line">	# 配置数据源--也就是数据表的数据</span><br><span class="line">	sql_query		=  SELECT id, school, address FROM school </span><br><span class="line">	# 配置返回字段--必须是数据表中存在的字段，不能设置返回主键，否则会报错</span><br><span class="line">	# 这里的字段还要和下面index里配置的 rt_field相对应</span><br><span class="line">	sql_field_string        = school </span><br><span class="line">    sql_field_string        = address </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">index school</span><br><span class="line">&#123;</span><br><span class="line">	source            = school # 数据源--也就是上边的名字</span><br><span class="line">    path              = E:\sphinx\data\school # 数据存放的地址--配置为刚新建的data下</span><br><span class="line">    mlock             = 0 # 缓存内存锁定</span><br><span class="line">    morphology        = none # 数据处理方法</span><br><span class="line">    min_word_len      = 1 # 最小索引字长</span><br><span class="line">    html_strip        = 0 # 是否去除html标签</span><br><span class="line">    ngram_len         = 1 # 支持中文</span><br><span class="line">    ngram_chars       = U+3000..U+2FA1F # 支持中文</span><br><span class="line"></span><br><span class="line">    # 字段配置</span><br><span class="line">    rt_attr_uint    = id </span><br><span class="line">    rt_field        = school</span><br><span class="line">    rt_field        = address</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">indexer</span><br><span class="line">&#123;</span><br><span class="line">	mem_limit		= 128M</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 下面都是默认的 修改一下log地址就好了</span><br><span class="line">searchd</span><br><span class="line">&#123;</span><br><span class="line">	listen			= 9312</span><br><span class="line">	listen			= 9306:mysql41</span><br><span class="line">	log				= E:\sphinx\log\searchd.log</span><br><span class="line">	query_log		= E:\sphinx\log\query.log</span><br><span class="line">	read_timeout	= 5</span><br><span class="line">	max_children	= 30</span><br><span class="line">	pid_file		= E:\sphinx\log\searchd.pid</span><br><span class="line">	seamless_rotate	= 1</span><br><span class="line">	preopen_indexes	= 1</span><br><span class="line">	unlink_old		= 1</span><br><span class="line">	workers			= threads # for RT to work</span><br><span class="line">	binlog_path		= E:\sphinx\data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><b>四、Sphinx在项目中如何使用呢？</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">require &quot;E:\sphinx\api\sphinxapi.php&quot;;</span><br><span class="line"></span><br><span class="line">$page = isset($_GET[&apos;p&apos;]) ? intval($_GET[&apos;p&apos;]) : 1;</span><br><span class="line">if ($page &lt;= 0) &#123;</span><br><span class="line">    $page = 1;</span><br><span class="line">&#125;</span><br><span class="line">$pagesize = 20;</span><br><span class="line"></span><br><span class="line">$sphinxClass = new \SphinxClient();</span><br><span class="line">$sphinxClass-&gt;setServer(&quot;localhost&quot;, 9312);</span><br><span class="line">$sphinxClass-&gt;setMaxQueryTime(3);</span><br><span class="line">$sphinxClass-&gt;SetArrayResult(true);</span><br><span class="line">$sphinxClass-&gt;SetLimits(($page - 1) * $pagesize, $pagesize, 3000); // 搜索分页</span><br><span class="line">// @school 表示只匹配数据表中school的字段 ,第二个参数表示使用的索引方法 对应sphinx中的index school</span><br><span class="line">$result = $sphinxClass-&gt;query(&apos;@school 戴崇&apos;, &apos;school&apos;);</span><br><span class="line">echo &apos;&lt;pre&gt;&apos;;</span><br><span class="line">print_r($result);</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>从上面代码可以看出，在项目中使用sphinx是非常简单的只需要引入这个类就ok了。</p>
+<p><b>五、测试</b></p>
+<p>&emsp;数据量200014条数据。</p>
+<p>&emsp;使用mysql模糊查询平均耗时 <font color="#ff5722">0.130s</font></p>
+<p>&emsp;使用sphinx搜索引擎平均耗时 <font color="#ff5722">0.030s</font></p>
+<p>&emsp;由此可见差距是很大的，如何数据量更大的情况下差距会更大。</p>
+<p><b>六、Sphinx的优点及缺点</b></p>
+<p>&emsp;优点:<br>&emsp;&emsp;Sphinx索引文件每次更新都会把数据全部存储在本地，也就是说当用户使用搜索的时候并不会直接请求数据库，降低了数据库的压力。<br>&emsp;&emsp;在几十万级数据查询时，Sphinx索引速度要比数据库索引速度快上好几倍，速度快。</p>
+<p>&emsp;缺点:<br>&emsp;&emsp;数据的索引文件会存储在本地，数据量大的时候对内存也有一定影响。<br>&emsp;&emsp;数据库的数据变化，是无法同步到Sphinx索引文件里的，也就是说每次数据库更新都要手动更新索引文件。<br>&emsp;&emsp;在没有使用中文分词的技术上，Sphinx搜索的结果是不准确的，例如：数据库中有‘戴崇1，戴崇2，戴崇3，戴崇’，使用like查询‘戴崇’会有四个结果，但使用Sphinx查询只会出现一个。</p>
+<p><b>总结</b></p>
+<p>&emsp;Sphinx从官网上可以看出已经将近一年没有更新过了，甚至还有一些bug没有修复，但整体来说Sphinx在使用方面还是非常简单可靠的。</p>
+<p>&emsp;<font color="#ff5722">PS:下一篇将会介绍Sphinx中文分词如何使用！</font></p>
 
         </div>
         
@@ -395,10 +399,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-06-23T13:02:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-16T17:45:21+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年6月23日</p>
+    <p>最后更新于 2019年8月16日</p>
   </a>
 </div>
 
@@ -407,7 +411,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="../tags/phpExcel/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>phpExcel</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="../tags/php扩展类/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>php扩展类</p></a></div>
 
 
         
@@ -420,8 +424,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.daichongweb.com/phpExcel分析复杂表格数据-远程文件/&title=phpExcel分析复杂表格数据(远程文件) | Daichong's Blog&summary=phpExcel是一个专门操作数据表格的类，他可以导入、导出excel表格中的数据，简单、漂亮，非常适合导入、导出、分析数据来使用。
-以下代码主要为了实现从阿里OSS上获取数据表格，并分析表格数据导入数据库，唯一不同的是这个表格是不规则，分析数据的话相对来数复杂了一些，废话不多少，下面直接介绍如何处理这种复杂的表格："
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.daichongweb.com/php-Sphinx搜索引擎/&title=php-Sphinx搜索引擎 | Daichong's Blog&summary=一、Sphinx是什么？
+&emsp;是一个基于SQL的全文检索引擎，可以结合MySQL,PostgreSQL做全文搜索，它可以提供比数据库本身更专业的搜索功能，使得应用程序更容易实现专业化的全文检索。Sphinx特别为一些脚本语言设计搜索API接口，如Java，PHP，Python，Perl，Ruby等，同时为MySQL也设计了一个存储引擎插件。 —百度百科    
+&emsp;Sphinx 单一索引最大可包含1亿条记录，在1千万条记录情况下的查询速度为0.x秒（毫秒级）。Sphinx创建索引的速度为：创建100万条记录的索引只需 3～4分钟，创建1000万条记录的索引可以在50分钟内完成，而只包含最新10万条记录的增量索引，重建一次只需几十秒。—百度百科"
           
           >
           
@@ -433,8 +438,9 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.daichongweb.com/phpExcel分析复杂表格数据-远程文件/&title=phpExcel分析复杂表格数据(远程文件) | Daichong's Blog&summary=phpExcel是一个专门操作数据表格的类，他可以导入、导出excel表格中的数据，简单、漂亮，非常适合导入、导出、分析数据来使用。
-以下代码主要为了实现从阿里OSS上获取数据表格，并分析表格数据导入数据库，唯一不同的是这个表格是不规则，分析数据的话相对来数复杂了一些，废话不多少，下面直接介绍如何处理这种复杂的表格："
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.daichongweb.com/php-Sphinx搜索引擎/&title=php-Sphinx搜索引擎 | Daichong's Blog&summary=一、Sphinx是什么？
+&emsp;是一个基于SQL的全文检索引擎，可以结合MySQL,PostgreSQL做全文搜索，它可以提供比数据库本身更专业的搜索功能，使得应用程序更容易实现专业化的全文检索。Sphinx特别为一些脚本语言设计搜索API接口，如Java，PHP，Python，Perl，Ruby等，同时为MySQL也设计了一个存储引擎插件。 —百度百科    
+&emsp;Sphinx 单一索引最大可包含1亿条记录，在1千万条记录情况下的查询速度为0.x秒（毫秒级）。Sphinx创建索引的速度为：创建100万条记录的索引只需 3～4分钟，创建1000万条记录的索引可以在50分钟内完成，而只包含最新10万条记录的增量索引，重建一次只需几十秒。—百度百科"
           
           >
           
@@ -444,7 +450,7 @@
       
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3aQW7cMAwF0Nz/0i3Q1XTh6f+klEmB55WRGLaeFiKH5NdXfP36c73ev15Pf3/9b/vM+/vDFx4eHt5o6e8/nPCSN9/b4sev4OHh4V3jJa9rD+iEl3zl/Xb/w4KHh4f3UV4CSxLup+ffrwoPDw/vf+Tl7DYYnCpM4OHh4X0nLylGzK48ACRl34u1Fjw8PLyYNyuhfvb+en8PDw8Pb9RV3xz6s6T57Drx8PDwbvDaEu3m4E5S57yQUQQMPDw8vAu8swl0HiqSImxSgIiKuXh4eHiHePnhO2uJ7Y/7TVEYDw8P7zYvLx8kDaqWdKoNVsQ3PDw8vBFvkxAnB3fOmA0ZRIUJPDw8vGu8/Dhu21dJKysvKNerxcPDw7vA2zfy9ylyS8qbbXh4eHhnebMEN9+C2dDAB0YE8PDw8EYJ7mw72rZWAmvDz+Om4OHh4X0Lb1ZObdtmt7cSDw8P7x6vTYXbv+TLHTa3ggCDh4eHd5bXDlQlV1J0yHe9DV14eHh4t3mbj50atEo2YrMdeHh4ePd4STk1WVY7CrAZVlj9YsDDw8Nb8PIFbQqvLX6WXj/+bsDDw8M7xNvXfdvSQPLFfNOLAgQeHh7eUV776nZTNkWHpLTxGHLw8PDwLvDatHizKbOCxYxXtMHw8PDwFrzZeFNSYE3S4rxk3I5k4eHh4d3g7Yel8uDRttDyoz+aLMPDw8M7ysuP47ZkMGuq5eHkcLTBw8PDi2GbZv+swZ+HijYI/TU6gIeHh3eU156x7al76p1t6o+Hh4d3m5csMb/PRwRy2KbwgYeHh3ePl3eONklzW9rYhC48PDy8n8zLj/v9OEL7JB4eHt5neXnzfpYobxLoRyQeHh7eNV5SjMgT3zYkJCGnbZ7h4eHh3ePtG2Dtk+1WzgYI8PDw8C7wfgMpDu4DBJ8yhQAAAABJRU5ErkJggg=='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aQW7DMAwF0dz/0u62RWN7PqkEMDVeBalq6WVBkCJfL/wcvx7+/f/P1/979rZljwwZMh7LOC4fsoYcNF3JzyZDhox9GGevJgH0eiX5K9/r9HsZMmTIAAwC4CFVhgwZMjoMXuiSdLC2rwwZMvZk1AIfYfA1X6rFZciQ8UAGv3X//ueP9DdkyJDxKMYRPv125qqT/NlLhgwZoxmdbUjyl45ZdNJQGTJkTGWQQ/AGZK0AToveNytlyJAxmoHicXglx9uT1xge3GXIkDGbkY5N1MpXEjTTBkCQGsqQIePhjH7xyUNkmnSm42UyZMiYyuChkGxwnXvypDAtaGXIkDGbUSs1b14XDo11fog3d4cyZMgYx0gDK0/aSLFaw9/U4jJkyBjN6BST/ajP16NpERkyZAxirDp6OmDBMcHbZMiQsTGjv9mqdwYzbjJkyBjESIct4vISHLE2RobyUBkyZIxmpOkdv1brJJE3wxYyZMgYyqglcKRV8LlUEo1cyJAhYxxj1fgpAfTHxYKZERkyZIxjdJI8PkwWp3p8CEOGDBkbMHjzMm15piuDo6c3hTJkyHgg4wifGjs9XJxoypAhYzSjdh1fS+nID5QOZMiQIWMfBg+y6TZrGwAyZMiQseBqHlzP8es8MtLR+rVkyJAxmsGbATxN7IdvGTJkyCApGm+FdhqWp2+QIUPGBoxaM4D8EOmVXBqyZciQsQMjLR351Vg6bLGWKkOGjBGMH0ot2xnwD6gpAAAAAElFTkSuQmCC'>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
         
@@ -454,8 +460,9 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://www.daichongweb.com/phpExcel分析复杂表格数据-远程文件/&title=phpExcel分析复杂表格数据(远程文件) | Daichong's Blog&summary=phpExcel是一个专门操作数据表格的类，他可以导入、导出excel表格中的数据，简单、漂亮，非常适合导入、导出、分析数据来使用。
-以下代码主要为了实现从阿里OSS上获取数据表格，并分析表格数据导入数据库，唯一不同的是这个表格是不规则，分析数据的话相对来数复杂了一些，废话不多少，下面直接介绍如何处理这种复杂的表格："
+          href="http://service.weibo.com/share/share.php?url=http://www.daichongweb.com/php-Sphinx搜索引擎/&title=php-Sphinx搜索引擎 | Daichong's Blog&summary=一、Sphinx是什么？
+&emsp;是一个基于SQL的全文检索引擎，可以结合MySQL,PostgreSQL做全文搜索，它可以提供比数据库本身更专业的搜索功能，使得应用程序更容易实现专业化的全文检索。Sphinx特别为一些脚本语言设计搜索API接口，如Java，PHP，Python，Perl，Ruby等，同时为MySQL也设计了一个存储引擎插件。 —百度百科    
+&emsp;Sphinx 单一索引最大可包含1亿条记录，在1千万条记录情况下的查询速度为0.x秒（毫秒级）。Sphinx创建索引的速度为：创建100万条记录的索引只需 3～4分钟，创建1000万条记录的索引可以在50分钟内完成，而只包含最新10万条记录的增量索引，重建一次只需几十秒。—百度百科"
           
           >
           
@@ -479,40 +486,21 @@
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="../mysql把字段的值用逗号连接成字符串/" rel="prev" title="mysql把字段的值用逗号连接成字符串">
-                                  
-                                      mysql把字段的值用逗号连接成字符串
-                                  
+                                <a href="../mysql视图的使用方法/" rel="prev" title="mysql视图的使用方法">
+                                    
+                                        mysql视图的使用方法
+                                    
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
                                     <a class="tag" href="../tags/mysql/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>mysql</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="../larveral小程序模板消息发送/" rel="prev" title="larveral小程序模板消息发送">
-                                    
-                                        larveral小程序模板消息发送
-                                    
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="../tags/larveral/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>larveral</a>
                                 </h6>
                             
                         </span>
@@ -557,7 +545,7 @@
 
   <script>
     window.subData = {
-      title: 'phpExcel分析复杂表格数据(远程文件)',
+      title: 'php-Sphinx搜索引擎',
       tools: true
     }
   </script>
