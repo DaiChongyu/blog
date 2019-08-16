@@ -383,8 +383,8 @@
 <p>&emsp;使用sphinx搜索引擎平均耗时 <font color="#ff5722">0.030s</font></p>
 <p>&emsp;由此可见差距是很大的，如何数据量更大的情况下差距会更大。</p>
 <p><b>六、Sphinx的优点及缺点</b></p>
-<p>&emsp;优点:<br>&emsp;&emsp;Sphinx索引文件每次更新都会把数据全部存储在本地，也就是说当用户使用搜索的时候并不会直接请求数据库，降低了数据库的压力。<br>&emsp;&emsp;在几十万级数据查询时，Sphinx索引速度要比数据库索引速度快上好几倍，速度快。</p>
-<p>&emsp;缺点:<br>&emsp;&emsp;数据的索引文件会存储在本地，数据量大的时候对内存也有一定影响。<br>&emsp;&emsp;数据库的数据变化，是无法同步到Sphinx索引文件里的，也就是说每次数据库更新都要手动更新索引文件。<br>&emsp;&emsp;在没有使用中文分词的技术上，Sphinx搜索的结果是不准确的，例如：数据库中有‘戴崇1，戴崇2，戴崇3，戴崇’，使用like查询‘戴崇’会有四个结果，但使用Sphinx查询只会出现一个。</p>
+<p>&emsp;优点:<br>&emsp;&emsp;(1)Sphinx索引文件每次更新都会把数据全部存储在本地，也就是说当用户使用搜索的时候并不会直接请求数据库，降低了数据库的压力。<br>&emsp;&emsp;(2)在几十万级数据查询时，Sphinx索引速度要比数据库索引速度快上好几倍，速度快。</p>
+<p>&emsp;缺点:<br>&emsp;&emsp;(1)数据的索引文件会存储在本地，数据量大的时候对内存也有一定影响。<br>&emsp;&emsp;(2)数据库的数据变化，是无法同步到Sphinx索引文件里的，也就是说每次数据库更新都要手动更新索引文件。<br>&emsp;&emsp;(3)在没有使用中文分词的技术上，Sphinx搜索的结果是不准确的，例如：数据库中有‘戴崇1，戴崇2，戴崇3，戴崇’，使用like查询‘戴崇’会有四个结果，但使用Sphinx查询只会出现一个。</p>
 <p><b>总结</b></p>
 <p>&emsp;Sphinx从官网上可以看出已经将近一年没有更新过了，甚至还有一些bug没有修复，但整体来说Sphinx在使用方面还是非常简单可靠的。</p>
 <p>&emsp;<font color="#ff5722">PS:下一篇将会介绍Sphinx中文分词如何使用！</font></p>
@@ -399,7 +399,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-16T17:45:21+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-16T17:52:19+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>最后更新于 2019年8月16日</p>
