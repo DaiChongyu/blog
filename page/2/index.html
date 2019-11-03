@@ -229,8 +229,8 @@
       
         
   <h2 class="title">
-    <a href="../../walle搭建项目部署系统/">
-      walle搭建项目部署系统
+    <a href="../../php-Sphinx搜索引擎/">
+      php-Sphinx搜索引擎
     </a>
   </h2>
 
@@ -258,7 +258,885 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-30</p>
+    <p>2019-08-16</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p><b>一、Sphinx是什么？</b></p>
+<p>&emsp;是一个基于SQL的全文检索引擎，可以结合MySQL,PostgreSQL做全文搜索，它可以提供比数据库本身更专业的搜索功能，使得应用程序更容易实现专业化的全文检索。Sphinx特别为一些脚本语言设计搜索API接口，如Java，PHP，Python，Perl，Ruby等，同时为MySQL也设计了一个存储引擎插件。 <em>—百度百科</em>    </p>
+<p>&emsp;Sphinx 单一索引最大可包含1亿条记录，在1千万条记录情况下的查询速度为0.x秒（毫秒级）。Sphinx创建索引的速度为：创建100万条记录的索引只需 3～4分钟，创建1000万条记录的索引可以在50分钟内完成，而只包含最新10万条记录的增量索引，重建一次只需几十秒。<em>—百度百科</em><br></p>
+      
+        <div class="readmore">
+          <a href="../../php-Sphinx搜索引擎/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/php扩展类/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>php扩展类</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../mysql视图的使用方法/">
+      mysql视图的使用方法
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-08-15</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>&emsp;上篇简单的介绍了视图的概念，那么这篇将告诉大家如何创建、修改、删除视图，也就是视图的基本操作了！</p>
+<p><b>一、在单表上创建视图</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建表 user</span><br><span class="line">create table user (id int,name varchar(10),age tinyint(3));</span><br><span class="line"># 插入数据</span><br><span class="line">insert into user values(1,&apos;张三&apos;,20),(2,&apos;李四&apos;,20);</span><br><span class="line"># 创建视图-并计算他们两年之后多少岁</span><br><span class="line">create view view_user as select id,name,age+2 as age from user; </span><br><span class="line"># 第二种写法</span><br><span class="line">create view view_user_1(user_id,user_name,user_age) as select id,name,age from user;</span><br></pre></td></tr></table></figure><br></p>
+      
+        <div class="readmore">
+          <a href="../../mysql视图的使用方法/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/mysql/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>mysql</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../mysql视图介绍/">
+      mysql视图介绍
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-08-15</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p><b>一、视图的含义</b></p>
+<p>&emsp;1.视图是从一个或多个表中导出的，视图的行为与表非常的相似，但视图是一个虚拟的表。在视图中可以使用<font color="#7070D8">Select</font>语句进行查询，也可以使用<font color="#7070D8">Insert</font>、<font color="#7070D8">Update</font>、<font color="#7070D8">Delete</font>，视图还可以从已经存在的视图的基础上定义（也就是视图上再做视图）。<br></p>
+      
+        <div class="readmore">
+          <a href="../../mysql视图介绍/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/mysql/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>mysql</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../charles过滤数据包/">
+      charles过滤数据包
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-08-09</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>1.1 设置过滤：找到【Proxy】-【Recording Setting】<br><img src="/charles过滤数据包/img/record.png"><br></p>
+      
+        <div class="readmore">
+          <a href="../../charles过滤数据包/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/开发工具/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>开发工具</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../charles抓ios手机数据包/">
+      charles抓ios手机数据包
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-08-09</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>Charles其实是一款代理服务器，通过过将自己设置成系统（电脑或者浏览器）的网络访问代理服务器，然后截取请求和请求结果达到分析抓包的目的。该软件是用Java写的，能够在Windows，Mac，Linux上使用.<br></p>
+      
+        <div class="readmore">
+          <a href="../../charles抓ios手机数据包/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/开发工具/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>开发工具</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../git覆盖本地未提交的代码/">
+      git覆盖本地未提交的代码
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-06-23</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>&emsp;在多人协作开发中，使用git或svn管理代码最常见的问题就是代码冲突！</p>
+<p>&emsp;作为高效开发团队中的一员应当具有处理这些问题的能力。</p>
+<p>&emsp;假设现有一个项目，有多个开发成员，成员A和成员B共同管理同一个分支的代码。成员A在本地修改了代码并提交到daichongweb分支，成员B也修改了代码，当成员B需要用到成员A提交代码中的部分功能，需要拉取daichongweb分支的代码，这时会出现一个错误。<br></p>
+      
+        <div class="readmore">
+          <a href="../../git覆盖本地未提交的代码/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/git/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>git</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../phpgd库处理图片生成海报图/">
+      【原创】phpgd库处理图片生成海报图
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-23</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <blockquote><p>一.引言</p>
+</blockquote>
+<p>&emsp;好久没写博客了，不知道该写些什么。<br>&emsp;正发愁呢，突然发现了一个好玩的东西。<br>&emsp;是什么呢？是php的一个扩展GD库。</p>
+<p>&emsp;为什么说他好玩？我刚开始想的是用gd库做一个画，金黄的太阳、碧蓝的天空下面有绿色的草地、草地上有幢五颜六色的房子和一个坐在草里玩电脑的男孩，以及旁边的一只白猫…<br>后来真的要做的时候才发现，这也太难了。除非全是用图片组合成的才用可能…但是真正的图片确也很难到达我的要求，那就算了吧，想象还是美好的。</p>
+<p>&emsp;后来经过整理和实践发现，这个东西比较适合做产品推广图来用，更加适合在公众号或小程序里跟二维码结合起来使用。<br></p>
+      
+        <div class="readmore">
+          <a href="../../phpgd库处理图片生成海报图/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/php/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>php</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../使用htpasswd为web网站增加安全性/">
+      使用htpasswd为web网站增加安全性
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-13</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <blockquote><p>一.引言</p>
+</blockquote>
+<font color="#ff5722">什么是 htpasswd ?</font><br>&emsp;(1)htpasswd是开源 http 服务器apache httpd的一个命令工具，用于生成 http 基本认证的密码文件。<br>&emsp;(2)nginx底层提供了 <a href="http://www.nginx.cn/doc/standard/httpauthbasic.html" target="_blank" rel="noopener">HttpAuthBasic</a>模块，这个模块支持最基本的http认证，这是http协议支持的。当你访问网站时候会弹出一个对话框要求你输入账号密码,只要输入正确才能访问对应的网站。<br><font color="#ff5722">如果认证失败会怎么样 ?</font><br>
+      
+        <div class="readmore">
+          <a href="../../使用htpasswd为web网站增加安全性/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>linux</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../用jquery做爬虫/">
+      【原创】用jquery做爬虫
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-10</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <blockquote><p>引言</p>
+</blockquote>
+<p>&emsp;之前公司有需求要做一个采集信息的工具,包括获取商品信息导入数据库,比价什么的功能,没办法只能尝试这做一下。<br>&emsp;考虑到是做定向爬取,我就选择了jquery,因为jquery相比其他语言做爬虫是简单轻松很多。<br><blockquote><p>不同语言自然会有不同用处。离开环境谈哪个好，哪个不好都是耍流氓。<br>1，如果是自己做着玩的话，定向爬几个页面，效率不是核心要求的话，问题不会大，什么语言都行的，性能差异不会大。当然，如果碰到十分复杂的页面，正则写的很复杂的话，爬虫的可维护性就会下降。<br></p></blockquote></p>
+      
+        <div class="readmore">
+          <a href="../../用jquery做爬虫/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/jquery/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>jquery</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../walle配置或部署可能会遇到的小问题/">
+      【原创】walle配置或部署可能会遇到的小问题
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-09</p>
   </a>
 </div>
 
@@ -297,15 +1175,13 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <blockquote><p>二.<b>前言</b>-<font color="#ff5722">为什么要使用walle来管理项目</font></p>
+      <blockquote><p>一.<b>引言</b></p>
 </blockquote>
-<blockquote><p>walle 让用户代码发布终于可以不只能选择 jenkins！支持各种web代码发布，php、java、python、go等代码的发布、回滚可以通过web来一键完成。walle 一个可自由配置项目，更人性化，高颜值，支持git、多用户、多语言、多项目、多环境同时部署的开源上线部署系统</p>
-<footer><strong>引言</strong><cite><a href="http://www.walle-web.io/docs/" target="_blank" rel="noopener">来自walle官网</a></cite></footer></blockquote>
-<p>&emsp;<font color="#ff5722">1)</font>.个人而言,walle为我提供了一个非常方便的项目管理平台,从项目开发到项目测试再到项目上线walle为整个流程提供了一套完美的解决方案。</p>
-<p>&emsp;<font color="#ff5722">2)</font>.对公司团队而言,walle为管理者提供了一个非常好的项目管理工具。对项目质量、项目的进度、程序的安全和可靠性等等都提供了一定的保障。<br></p>
+<p>&emsp;作为一个刚接触walle不久的新手,在配置和部署的过程中难免会遇到一些奇奇怪怪的问题。当然排除一些本身就对Linux什么的玩的比较好的大神。<br>&emsp;本来想多写点字凑个字数…后来想想还是算了。<br><blockquote><p>二.<b>配置时</b></p>
+</blockquote><br>&emsp;在<font color="#ff5722">项目管理-新建项目</font>里,新增项目的时候可能会出现的问题<br>&emsp;意思是目标机最少要有一个<br></p>
       
         <div class="readmore">
-          <a href="../../walle搭建项目部署系统/" class="flat-box">
+          <a href="../../walle配置或部署可能会遇到的小问题/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -316,945 +1192,6 @@
       <div class="full-width auto-padding tags">
         
           <a href="../../tags/walle/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>walle</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../hexo-github-coding搭建博客-绑定多域名/">
-      【原创】hexo+github+coding搭建博客(绑定多域名)
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-22</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>hexo</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>&emsp;一.最近服务器快到期了,也突然想起之前有个网友问我怎么用hexo+github搭建个人博客,好多天没有回他,心里也总是过意不去。不论他有没有解决这个问题,现在也需要补发一篇关于hexo+github+coding搭建个人博客的文章了。</p>
-<p>&emsp;二.也希望通过这篇博客,能让更多正处于初期阶段的同学顺利的搭建属于自己的博客;也同样适合没有编程经验的同学来亲手感觉一下编程的乐趣！<br></p>
-      
-        <div class="readmore">
-          <a href="../../hexo-github-coding搭建博客-绑定多域名/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>hexo</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../composer-报错php-pdo-firebird-dll找不到指定模块/">
-      composer 报错php_pdo_firebird.dll找不到指定模块
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-04</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>php扩展类</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>自从把php版本切换到7.0后，一旦使用composer就会出现php_pdo_firebird.dll找不到指定模块的错误，而且还不止这一个。百度查过很多资料最后都是没有解决，最后受到一篇博客的启发，尝试在php环境里卸载掉这些扩展，最后，，居然解决了？？<br></p>
-      
-        <div class="readmore">
-          <a href="../../composer-报错php-pdo-firebird-dll找不到指定模块/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/composer/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>composer</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../sublime-text3-不能安装插件/">
-      sublime text3 不能安装插件
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-03-13</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>开发工具</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>用sublime的小伙伴会发现最近用Package Control安装插件的时候总会提示请前往一个地址寻求帮助的一句话。我在百度上也了解了一下，大多都说是被墙了或者是版本的问题，真实的原因还不知道是那个，不管了反正能解决就行。</p>
-<p>解决方案：<br></p>
-      
-        <div class="readmore">
-          <a href="../../sublime-text3-不能安装插件/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/sublime/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>sublime</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../sublime-Text3自动格式化php代码/">
-      sublime Text3自动格式化php代码
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-03-07</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>开发工具</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>sublime text3很小的一个代码开发工具，但功能却很强大。开发者可安装各种插件帮助开发，提升代码质量和开发效率，相比一些HD或pS的开发工具，个人还是比较喜欢sublime。</p>
-<p>这篇文章主要讲sublime中自动格式化php代码的插件介绍和安装配置。<br></p>
-      
-        <div class="readmore">
-          <a href="../../sublime-Text3自动格式化php代码/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/sublime/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>sublime</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../mysql把字段的值用逗号连接成字符串/">
-      mysql把字段的值用逗号连接成字符串
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-03-01</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>mysql</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>两张多对多关系的表进行数据关联查询，有两种常见的写法(我只知道两种,嘿嘿)：<br>(1) 从主表中查出来所关联的字段，例如order_id，然后循环数组将order_id用逗号隔开；副表进行in查询（当然这种写法比较low,新手使用的比较多）</p>
-<p>(2) 使用leftJoin关联，左边为主表<br>以上仅举例</p>
-<p>有些情况下只能使用先查再in的写法，那么怎么简化它呢(就不想先查再循环连接)？</p>
-<p>那么一个mysql的函数就能使用上了，他就是<a>GROUP_CONCAT()</a>.这个函数就是把某个字段的值用字符串连接成<a>A,B,C</a>这样的格式<br></p>
-      
-        <div class="readmore">
-          <a href="../../mysql把字段的值用逗号连接成字符串/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/mysql/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>mysql</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../phpExcel分析复杂表格数据-远程文件/">
-      phpExcel分析复杂表格数据(远程文件)
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-02-26</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>php扩展类</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>phpExcel是一个专门操作数据表格的类，他可以导入、导出excel表格中的数据，简单、漂亮，非常适合导入、导出、分析数据来使用。</p>
-<p>以下代码主要为了实现从阿里OSS上获取数据表格，并分析表格数据导入数据库，唯一不同的是这个表格是不规则，分析数据的话相对来数复杂了一些，废话不多少，下面直接介绍如何处理这种复杂的表格：<br></p>
-      
-        <div class="readmore">
-          <a href="../../phpExcel分析复杂表格数据-远程文件/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/phpExcel/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>phpExcel</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../larveral小程序模板消息发送/">
-      larveral小程序模板消息发送
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-02-20</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>php框架</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>今天来一篇larveral5.5的小程序模板消息发送示例，总感觉用larveral框架写的代码逼格高了很多，奇怪！！</p>
-<p>1.小程序向用户发送模板消息分为两步：<br>    第一步：用户在小程序上进行表单操作(例如提交表单),此时前端要获取到form_id传递给后端<br>    第二步：后端接收到from_id，再查询用户的openid，按照微信文档的数据格式进行发送<br>2.发送之前有一下几个前提:<br>    第一:微信小程序以开通了消息服务<br>    第二:微信小程序以配置了模板消息<br>    第三:发送的数据内容必须和微信小程序配置的模板消息一致<br>    第四:获取到正确的用户openid<br>    第五:获取到未过期的微信access_token<br></p>
-      
-        <div class="readmore">
-          <a href="../../larveral小程序模板消息发送/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/larveral/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>larveral</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../tp5模型事件‘beforeInsert’用法/">
-      tp5模型事件‘before_insert’用法
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-02-19</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>php框架</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <blockquote><p>tp5的模型事件只有在调用模型方法的时候生效，使用查询构造器是无效的。</p>
-<footer><strong>引言TP5官网</strong></footer></blockquote>
-<p>也就是说，不实例化模型进行操作before_insert这个方法是不执行的。</p>
-<p>模型的意义就是为了简化控制器操作，简化逻辑处理，提升代码的整洁度和可读性。这样一来模型事件起到了至关重要的作用。<br></p>
-      
-        <div class="readmore">
-          <a href="../../tp5模型事件‘beforeInsert’用法/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/tp5/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>tp5</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../tp5类的属性不存在/">
-      tp5类的属性不存在
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-02-16</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>tp5模型新增关联报错类的属性不存在,即使数据表中存在需要的字段，但是依然报错app\common\model\Slide-&gt;is_slide类似的问题，其实是因为在使用关联模型新增的时候主表新增操作未使用模型新增。<br></p>
-      
-        <div class="readmore">
-          <a href="../../tp5类的属性不存在/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/tp5/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>tp5</a>
         
       </div>
     
@@ -1279,7 +1216,7 @@
             </a>
           
           <p class="current">
-            2 / 5
+            2 / 6
           </p>
           
             <a class="next" rel="next" href="../3/">
@@ -1507,7 +1444,7 @@
 </header>
 
     <div class='content material'>
-      <a href="../../tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="../../tags/composer/" style="font-size: 14px; color: #999">composer</a> <a href="../../tags/git/" style="font-size: 14px; color: #999">git</a> <a href="../../tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="../../tags/jquery/" style="font-size: 19px; color: #777">jquery</a> <a href="../../tags/js/" style="font-size: 14px; color: #999">js</a> <a href="../../tags/larveral/" style="font-size: 14px; color: #999">larveral</a> <a href="../../tags/linux/" style="font-size: 16.5px; color: #888">linux</a> <a href="../../tags/mysql/" style="font-size: 21.5px; color: #666">mysql</a> <a href="../../tags/php/" style="font-size: 24px; color: #555">php</a> <a href="../../tags/phpExcel/" style="font-size: 14px; color: #999">phpExcel</a> <a href="../../tags/php扩展类/" style="font-size: 14px; color: #999">php扩展类</a> <a href="../../tags/sublime/" style="font-size: 16.5px; color: #888">sublime</a> <a href="../../tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="../../tags/tp5/" style="font-size: 16.5px; color: #888">tp5</a> <a href="../../tags/walle/" style="font-size: 16.5px; color: #888">walle</a> <a href="../../tags/小程序支付/" style="font-size: 14px; color: #999">小程序支付</a> <a href="../../tags/开发工具/" style="font-size: 16.5px; color: #888">开发工具</a> <a href="../../tags/微信小程序/" style="font-size: 14px; color: #999">微信小程序</a> <a href="../../tags/微信支付/" style="font-size: 16.5px; color: #888">微信支付</a> <a href="../../tags/浏览器/" style="font-size: 14px; color: #999">浏览器</a>
+      <a href="../../tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="../../tags/composer/" style="font-size: 14px; color: #999">composer</a> <a href="../../tags/git/" style="font-size: 14px; color: #999">git</a> <a href="../../tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="../../tags/jquery/" style="font-size: 18px; color: #7e7e7e">jquery</a> <a href="../../tags/js/" style="font-size: 14px; color: #999">js</a> <a href="../../tags/larveral/" style="font-size: 14px; color: #999">larveral</a> <a href="../../tags/linux/" style="font-size: 20px; color: #707070">linux</a> <a href="../../tags/mysql/" style="font-size: 22px; color: #636363">mysql</a> <a href="../../tags/php/" style="font-size: 24px; color: #555">php</a> <a href="../../tags/phpExcel/" style="font-size: 14px; color: #999">phpExcel</a> <a href="../../tags/php扩展类/" style="font-size: 16px; color: #8b8b8b">php扩展类</a> <a href="../../tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="../../tags/sublime/" style="font-size: 16px; color: #8b8b8b">sublime</a> <a href="../../tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="../../tags/tp5/" style="font-size: 16px; color: #8b8b8b">tp5</a> <a href="../../tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="../../tags/walle/" style="font-size: 16px; color: #8b8b8b">walle</a> <a href="../../tags/小程序支付/" style="font-size: 14px; color: #999">小程序支付</a> <a href="../../tags/开发工具/" style="font-size: 18px; color: #7e7e7e">开发工具</a> <a href="../../tags/微信小程序/" style="font-size: 14px; color: #999">微信小程序</a> <a href="../../tags/微信支付/" style="font-size: 16px; color: #8b8b8b">微信支付</a> <a href="../../tags/测试/" style="font-size: 16px; color: #8b8b8b">测试</a> <a href="../../tags/浏览器/" style="font-size: 14px; color: #999">浏览器</a>
     </div>
   </section>
 
@@ -1520,44 +1457,6 @@
           
             
 
-
-  <section class='widget music'>
-    
-<header class='material'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/playlist?id=3812895"
-    title="https://music.163.com/#/playlist?id=3812895">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content material'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#7070D8"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="709924019"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
 
 
           
@@ -1615,11 +1514,6 @@
     <a href="" target="_blank" class="codename">豫ICP备17020644号</a>
     博客
     
-      ，
-      总访问量为
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      次
-    
     。
   </div>
 </footer>
@@ -1673,8 +1567,6 @@
     });
   </script>
 
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
 
 
