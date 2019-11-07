@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>laravel模型关联（一对一、一对多、多对多）</title>
-    <url>/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94%EF%BC%88%E4%B8%80%E5%AF%B9%E4%B8%80%E3%80%81%E4%B8%80%E5%AF%B9%E5%A4%9A%E3%80%81%E5%A4%9A%E5%AF%B9%E5%A4%9A%EF%BC%89/</url>
+    <title>laravel模型关联</title>
+    <url>/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/</url>
     <content><![CDATA[<p><b>一对一</b></p>
 <p>&emsp;什么是一对多？</p>
 <p>&emsp;在程序角度讲：一对多基本上都是用来描述两个数据表之间的关系。</p>
