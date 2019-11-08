@@ -1,6 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>laravel模型关联查询与JOIN哪个性能好</title>
+    <url>/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2%E4%B8%8EJOIN%E5%93%AA%E4%B8%AA%E6%80%A7%E8%83%BD%E5%A5%BD/</url>
+    <content><![CDATA[<p><strong>初学Laravel</strong></p>
+<p>最近接手一个新项目，整个项目完全看不到<code>left join</code>这样的写法，我打印了模型关联查询后的<code>sql</code>后发现跟常有的查询写法完全不同。<br>原谅我一直是个码农，几乎没见过这样的写法，一直想对比一下这样的写法和常用的写法性能方面到底有什么差别。<br><a id="more"></a><br><strong>一个小栗子</strong></p>
+<p>模型关联生成的sql<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="string">`comment`</span> <span class="keyword">where</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> <span class="string">`post_comment`</span> <span class="keyword">where</span> <span class="string">`comment`</span>.<span class="string">`id`</span> = <span class="string">`post_comment`</span>.<span class="string">`comment_id`</span> <span class="keyword">and</span> <span class="string">`post_id`</span> = ?)</span><br></pre></td></tr></table></figure></p>
+<p>常用查询<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">`comment`</span>.id,<span class="string">`comment`</span>.info,<span class="string">`comment`</span>.user_id <span class="keyword">from</span> <span class="string">`comment`</span> <span class="keyword">left</span> <span class="keyword">join</span> post_comment <span class="keyword">on</span> <span class="string">`comment`</span>.id = <span class="string">`post_comment`</span>.comment_id <span class="keyword">where</span> post_comment.post_id = ?</span><br></pre></td></tr></table></figure></p>
+<p>单从<code>sql</code>上看区别还是挺大的，再做码农的期间，最常听到的就是链表查询性能不好。但是还真不能确定这两个<code>sql</code>到底哪个性能好一点，没办法只能测试一下。</p>
+<h3 id="posts-Tables"><a href="#posts-Tables" class="headerlink" title="posts Tables"></a>posts Tables</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:center">title</th>
+<th style="text-align:right">time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center">模型关联查询</td>
+<td style="text-align:right">2019-11-08</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center">left join 查询</td>
+<td style="text-align:right">2019-11-08</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comment-Tables"><a href="#comment-Tables" class="headerlink" title="comment Tables"></a>comment Tables</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:center">info</th>
+<th style="text-align:right">time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center">模型关联查询的性能好</td>
+<td style="text-align:right">2019-11-08</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center">left join 查询的性能好</td>
+<td style="text-align:right">2019-11-08</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:center">两个都挺好</td>
+<td style="text-align:right">2019-11-08</td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-comment-Tables"><a href="#post-comment-Tables" class="headerlink" title="post_comment Tables"></a>post_comment Tables</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:center">post_id</th>
+<th style="text-align:right">comment_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:right">2</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">2</td>
+</tr>
+</tbody>
+</table>
+<p>为了避免争议，我添加了一些比较合理的数据。</p>
+<h4 id="数据量"><a href="#数据量" class="headerlink" title="数据量"></a>数据量</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">posts</th>
+<th style="text-align:center">comment</th>
+<th style="text-align:right">post_comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">29999条</td>
+<td style="text-align:center">29999条</td>
+<td style="text-align:right">29999条</td>
+</tr>
+</tbody>
+</table>
+<h4 id="下面使用EXPLAIN进行分析"><a href="#下面使用EXPLAIN进行分析" class="headerlink" title="下面使用EXPLAIN进行分析"></a>下面使用EXPLAIN进行分析</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">select</span> * <span class="keyword">from</span> <span class="string">`comment`</span> <span class="keyword">where</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> <span class="string">`post_comment`</span> <span class="keyword">where</span> <span class="string">`comment`</span>.<span class="string">`id`</span> = <span class="string">`post_comment`</span>.<span class="string">`comment_id`</span> <span class="keyword">and</span> <span class="string">`post_id`</span> = <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">select_type</th>
+<th style="text-align:right">table</th>
+<th style="text-align:right">partitions</th>
+<th style="text-align:right">type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">PRIMARY</td>
+<td style="text-align:right">comment</td>
+<td style="text-align:right">NULL</td>
+<td style="text-align:right">ALL</td>
+</tr>
+<tr>
+<td style="text-align:center">DEPENDENT SUBQUERY</td>
+<td style="text-align:right">post_comment</td>
+<td style="text-align:right">NULL</td>
+<td style="text-align:right">ref</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">possible_keys</th>
+<th style="text-align:right">key</th>
+<th style="text-align:right">key_len</th>
+<th style="text-align:right">ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">NULL</td>
+<td style="text-align:right">NULL</td>
+<td style="text-align:right">NULL</td>
+<td style="text-align:right">NULL</td>
+</tr>
+<tr>
+<td style="text-align:right">post_id,comment_id</td>
+<td style="text-align:right">post_id</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">const</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">rows</th>
+<th style="text-align:right">filtered</th>
+<th style="text-align:right">Extra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">29999</td>
+<td style="text-align:right">100.00</td>
+<td style="text-align:right">Using where</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:right">10.00</td>
+<td style="text-align:right">Using where</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> <span class="string">`comment`</span>.id,<span class="string">`comment`</span>.info,<span class="string">`comment`</span>.user_id <span class="keyword">from</span> <span class="string">`comment`</span> <span class="keyword">left</span> <span class="keyword">join</span> post_comment <span class="keyword">on</span> <span class="string">`comment`</span>.id = <span class="string">`post_comment`</span>.comment_id <span class="keyword">where</span> post_comment.post_id = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">select_type</th>
+<th style="text-align:center">table</th>
+<th style="text-align:right">partitions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">SIMPLE</td>
+<td style="text-align:center">post_comment</td>
+<td style="text-align:right">NULL</td>
+</tr>
+<tr>
+<td style="text-align:left">SIMPLE</td>
+<td style="text-align:center">comment</td>
+<td style="text-align:right">NULL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">type</th>
+<th style="text-align:right">possible_keys</th>
+<th style="text-align:right">key</th>
+<th style="text-align:right">key_len</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">ref</td>
+<td style="text-align:right">post_id,comment_id</td>
+<td style="text-align:right">post_id</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td style="text-align:right">eq_ref</td>
+<td style="text-align:right">PRIMARY</td>
+<td style="text-align:right">PRIMARY</td>
+<td style="text-align:right">4</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">ref</th>
+<th style="text-align:right">rows</th>
+<th style="text-align:right">filtered</th>
+<th style="text-align:right">Extra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">const</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">100.00</td>
+<td style="text-align:right">Using where</td>
+</tr>
+<tr>
+<td style="text-align:right">test.post_comment.comment_id</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">100.00</td>
+<td style="text-align:right">NULL</td>
+</tr>
+</tbody>
+</table>
+<p>从上边的<code>EXPLAIN</code>结果来看，<code>left join</code>比模型关联的写法效率高太多了，之后我在<code>laravel</code>社区也发布了相关的提问，得到的结论是<code>数据量大的时候用JOIN，数据量小的时候用模型</code>。</p>
+<p>从得的的结论来看，模型并适合大数据查询，但是对一些新增、修改、删除操作提供了很好的效果！</p>
+]]></content>
+      <tags>
+        <tag>laravel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>laravel模型关联</title>
     <url>/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/</url>
     <content><![CDATA[<p><b>一对一</b></p>

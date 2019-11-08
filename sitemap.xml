@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.daichongweb.com/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2%E4%B8%8EJOIN%E5%93%AA%E4%B8%AA%E6%80%A7%E8%83%BD%E5%A5%BD/</loc>
+    
+    <lastmod>2019-11-08T08:50:26.827Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.daichongweb.com/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/</loc>
     
-    <lastmod>2019-11-07T04:28:55.223Z</lastmod>
+    <lastmod>2019-11-08T08:34:19.518Z</lastmod>
     
   </url>
   
@@ -65,6 +72,13 @@
   </url>
   
   <url>
+    <loc>http://www.daichongweb.com/WEB%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95/</loc>
+    
+    <lastmod>2019-10-23T03:07:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.daichongweb.com/WEB%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-JMeter%E5%AE%89%E8%A3%85/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
@@ -79,21 +93,7 @@
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/WEB%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95/</loc>
-    
-    <lastmod>2019-10-23T03:07:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.daichongweb.com/charles%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE%E5%8C%85/</loc>
-    
-    <lastmod>2019-10-23T03:07:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.daichongweb.com/git%E8%A6%86%E7%9B%96%E6%9C%AC%E5%9C%B0%E6%9C%AA%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BB%A3%E7%A0%81/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
@@ -107,7 +107,7 @@
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/js%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%E5%8D%B4%E5%8F%91%E8%B5%B7%E5%A4%9A%E6%AC%A1%E8%AF%B7%E6%B1%82/</loc>
+    <loc>http://www.daichongweb.com/git%E8%A6%86%E7%9B%96%E6%9C%AC%E5%9C%B0%E6%9C%AA%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BB%A3%E7%A0%81/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
@@ -128,14 +128,14 @@
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/larveral%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF%E5%8F%91%E9%80%81/</loc>
+    <loc>http://www.daichongweb.com/js%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%E5%8D%B4%E5%8F%91%E8%B5%B7%E5%A4%9A%E6%AC%A1%E8%AF%B7%E6%B1%82/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/mysql%E6%8A%8A%E5%AD%97%E6%AE%B5%E7%9A%84%E5%80%BC%E7%94%A8%E9%80%97%E5%8F%B7%E8%BF%9E%E6%8E%A5%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <loc>http://www.daichongweb.com/larveral%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF%E5%8F%91%E9%80%81/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
@@ -149,6 +149,13 @@
   </url>
   
   <url>
+    <loc>http://www.daichongweb.com/mysql%E6%8A%8A%E5%AD%97%E6%AE%B5%E7%9A%84%E5%80%BC%E7%94%A8%E9%80%97%E5%8F%B7%E8%BF%9E%E6%8E%A5%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    
+    <lastmod>2019-10-23T03:07:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.daichongweb.com/mysql%E8%A7%86%E5%9B%BE%E4%BB%8B%E7%BB%8D/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
@@ -156,14 +163,14 @@
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/php-Sphinx%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</loc>
+    <loc>http://www.daichongweb.com/mysql%E8%A7%86%E5%9B%BE%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/mysql%E8%A7%86%E5%9B%BE%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
+    <loc>http://www.daichongweb.com/php-Sphinx%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
@@ -191,14 +198,14 @@
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/php%E5%85%B3%E4%BA%8Etrait%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://www.daichongweb.com/php%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93PDO/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/php%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93PDO/</loc>
+    <loc>http://www.daichongweb.com/php%E5%85%B3%E4%BA%8Etrait%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
@@ -317,14 +324,14 @@
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/%E4%BD%BF%E7%94%A8htpasswd%E4%B8%BAweb%E7%BD%91%E7%AB%99%E5%A2%9E%E5%8A%A0%E5%AE%89%E5%85%A8%E6%80%A7/</loc>
+    <loc>http://www.daichongweb.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%9C%8D%E5%8A%A1%E5%95%86%E6%94%AF%E4%BB%98/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.daichongweb.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%9C%8D%E5%8A%A1%E5%95%86%E6%94%AF%E4%BB%98/</loc>
+    <loc>http://www.daichongweb.com/%E4%BD%BF%E7%94%A8htpasswd%E4%B8%BAweb%E7%BD%91%E7%AB%99%E5%A2%9E%E5%8A%A0%E5%AE%89%E5%85%A8%E6%80%A7/</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
@@ -373,6 +380,13 @@
   </url>
   
   <url>
+    <loc>http://www.daichongweb.com/about/index.html</loc>
+    
+    <lastmod>2019-10-23T03:07:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.daichongweb.com/categories/index.html</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
@@ -381,13 +395,6 @@
   
   <url>
     <loc>http://www.daichongweb.com/friends/index.html</loc>
-    
-    <lastmod>2019-10-23T03:07:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.daichongweb.com/about/index.html</loc>
     
     <lastmod>2019-10-23T03:07:49.000Z</lastmod>
     
