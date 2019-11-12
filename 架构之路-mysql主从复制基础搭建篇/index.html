@@ -356,24 +356,24 @@
         <div class="article-entry" itemprop="articleBody">
           <h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>本文介绍的是在虚拟机上搭建，实际情况其实和真正的线上环境一毛一样，使用的系统是Centos 7。</p>
 <h4 id="什么是主从复制？原理是什么？"><a href="#什么是主从复制？原理是什么？" class="headerlink" title="什么是主从复制？原理是什么？"></a>什么是主从复制？原理是什么？</h4><p>答：简单点理解，主从复制其实就是两个数据库数据的项目备份过程。其原理就是主库产生的操作都会生成<code>binlog</code>传入从库，从库通过<code>I/O</code>线程把<code>binlog</code>写入<code>relaylog</code>，然后从库创建<code>I/O</code>线程执行<code>relaylog</code>进行数据备份。<br><a id="more"></a></p>
-<h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><img src="/架构之路-mysql主从复制基础配置篇/img/1.png">
+<h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><img src="/架构之路-mysql主从复制基础搭建篇/img/1.png">
 <h4 id="为什么要做主从复制？"><a href="#为什么要做主从复制？" class="headerlink" title="为什么要做主从复制？"></a>为什么要做主从复制？</h4><p>答：一方面是为了备份数据，防止数据丢失和破坏，另一方面是为读写分离做铺垫。</p>
 <h4 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h4><h5 id="新建虚拟机"><a href="#新建虚拟机" class="headerlink" title="新建虚拟机"></a>新建虚拟机</h5><p>首先在本地安装虚拟机，我个人比较推荐 <code>VMware Workstation Pro</code>，当然也可以是使用其他的。<br>虚拟机的安装就不做介绍了，无非都是下一步下一步。安装好之后在需要下载对用的系统镜像，因为本文主要是在<code>Centos</code>上做演示，所以我就下载了<code>Centos</code>的镜像，但是无法分享给大家，因为太大了，足足<code>4G</code>。</p>
-<p>安装好之后新建两个虚拟机(怎么新建虚拟机就不做介绍了):<br><img src="/架构之路-mysql主从复制基础配置篇/img/2.png"></p>
+<p>安装好之后新建两个虚拟机(怎么新建虚拟机就不做介绍了):<br><img src="/架构之路-mysql主从复制基础搭建篇/img/2.png"></p>
 <h5 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h5><p>注意：尽量两个虚拟机上的mysql版本保持一直，避免出现不可预知的错误。<br>我安装的版本是5.7.<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入</span></span><br><span class="line">cd /usr/local/src</span><br><span class="line"><span class="meta">#</span><span class="bash"> 下载rpm包</span></span><br><span class="line">wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装rpm</span></span><br><span class="line">rpm -ivh mysql57-community-release-el7-11.noarch.rpm</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装 mysql-server</span></span><br><span class="line">yum install -y mysql-server</span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动 </span></span><br><span class="line">systemctl start mysqld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置开机自启</span></span><br><span class="line">systemctl enable mysqld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 登陆mysql</span></span><br><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure></p>
 <p>因为5.7之后的版本都是禁止匿名登陆的，你可以通过查看密码并登陆，然后修改密码，或者直接修改<code>my.cnf</code>来禁止登陆验证。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/log/mysqld.log|grep 'A temporary password'</span><br></pre></td></tr></table></figure></p>
 <p>因为系统给我的默认密码含有一些特殊符号，我没法输入，我只能使用第二种方法：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vi \etc\my.cnf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在最后增加一行</span></span><br><span class="line">skip-grant-tables=1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 登陆mysql，刷新权限</span></span><br><span class="line">flush privileges;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改密码</span></span><br><span class="line">use mysql;</span><br><span class="line">update user set password='password' where user='root'；</span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改成功后再次刷新权限</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 最后重启一下mysql服务</span></span><br></pre></td></tr></table></figure></p>
 <h5 id="本地连接虚拟机上的mysql"><a href="#本地连接虚拟机上的mysql" class="headerlink" title="本地连接虚拟机上的mysql"></a>本地连接虚拟机上的mysql</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看IP</span></span><br><span class="line">ifconfig</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在本地Cmd中ping这个IP</span></span><br></pre></td></tr></table></figure>
 <h5 id="使用telnet测试mysql连接状态"><a href="#使用telnet测试mysql连接状态" class="headerlink" title="使用telnet测试mysql连接状态"></a>使用telnet测试mysql连接状态</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet 192.168.22.130 3360</span><br></pre></td></tr></table></figure>
-<h5 id="错误的情况（因我这里是好的，所以我把3306填成了3360）"><a href="#错误的情况（因我这里是好的，所以我把3306填成了3360）" class="headerlink" title="错误的情况（因我这里是好的，所以我把3306填成了3360）"></a>错误的情况（因我这里是好的，所以我把3306填成了3360）</h5><img src="/架构之路-mysql主从复制基础配置篇/img/3.png">
+<h5 id="错误的情况（因我这里是好的，所以我把3306填成了3360）"><a href="#错误的情况（因我这里是好的，所以我把3306填成了3360）" class="headerlink" title="错误的情况（因我这里是好的，所以我把3306填成了3360）"></a>错误的情况（因我这里是好的，所以我把3306填成了3360）</h5><img src="/架构之路-mysql主从复制基础搭建篇/img/3.png">
 <h5 id="检查虚拟机是否安装了iptables"><a href="#检查虚拟机是否安装了iptables" class="headerlink" title="检查虚拟机是否安装了iptables"></a>检查虚拟机是否安装了iptables</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">sudo yum install iptables-services</span><br><span class="line"><span class="meta">#</span><span class="bash"> 开启服务</span></span><br><span class="line">sudo systemctl enable iptables </span><br><span class="line">sudo systemctl enable ip6tables </span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动服务</span></span><br><span class="line">sudo systemctl start iptables </span><br><span class="line">sudo systemctl start ip6tables</span><br><span class="line"><span class="meta">#</span><span class="bash"> 开启访问权限</span></span><br><span class="line">vi /etc/sysconfig/iptables</span><br><span class="line"><span class="meta">#</span><span class="bash"> 复制到端口22的下面</span></span><br><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash"> 保持退出后重启</span></span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
-<img src="/架构之路-mysql主从复制基础配置篇/img/4.png">
-<img src="/架构之路-mysql主从复制基础配置篇/img/5.png">
+<img src="/架构之路-mysql主从复制基础搭建篇/img/4.png">
+<img src="/架构之路-mysql主从复制基础搭建篇/img/5.png">
 <p>再次使用<code>telnet 192.168.22.130 3306</code>还是报错上边图片所示时。</p>
 <h5 id="配置权限"><a href="#配置权限" class="headerlink" title="配置权限"></a>配置权限</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建一个用户</span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO 'daichong'@'%' IDENTIFIED BY 'daichong' WITH GRANT OPTION;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 刷新权限</span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 这里注意真实线上情况权限不能这么开</span></span><br></pre></td></tr></table></figure>
-<img src="/架构之路-mysql主从复制基础配置篇/img/6.png">
+<img src="/架构之路-mysql主从复制基础搭建篇/img/6.png">
 <p>出现这个说明已经成功了</p>
-<h5 id="使用navicat连接"><a href="#使用navicat连接" class="headerlink" title="使用navicat连接"></a>使用navicat连接</h5><img src="/架构之路-mysql主从复制基础配置篇/img/7.png">
+<h5 id="使用navicat连接"><a href="#使用navicat连接" class="headerlink" title="使用navicat连接"></a>使用navicat连接</h5><img src="/架构之路-mysql主从复制基础搭建篇/img/7.png">
 <p>到这里基础的安装已经完成了，如果遇到问题可在评论中提问，下一篇介绍主从复制如何配置。</p>
 
         </div>
@@ -386,7 +386,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-12T10:26:10+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-12T10:30:30+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>最后更新于 2019年11月12日</p>
@@ -411,7 +411,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.daichongweb.com/架构之路-mysql主从复制基础配置篇/&title=架构之路-mysql主从复制基础配置篇 | Daichong's Blog&summary=引言本文介绍的是在虚拟机上搭建，实际情况其实和真正的线上环境一毛一样，使用的系统是Centos 7。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.daichongweb.com/架构之路-mysql主从复制基础搭建篇/&title=架构之路-mysql主从复制基础配置篇 | Daichong's Blog&summary=引言本文介绍的是在虚拟机上搭建，实际情况其实和真正的线上环境一毛一样，使用的系统是Centos 7。
 什么是主从复制？原理是什么？答：简单点理解，主从复制其实就是两个数据库数据的项目备份过程。其原理就是主库产生的操作都会生成binlog传入从库，从库通过I/O线程把binlog写入relaylog，然后从库创建I/O线程执行relaylog进行数据备份。"
           
           >
@@ -424,7 +424,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.daichongweb.com/架构之路-mysql主从复制基础配置篇/&title=架构之路-mysql主从复制基础配置篇 | Daichong's Blog&summary=引言本文介绍的是在虚拟机上搭建，实际情况其实和真正的线上环境一毛一样，使用的系统是Centos 7。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.daichongweb.com/架构之路-mysql主从复制基础搭建篇/&title=架构之路-mysql主从复制基础配置篇 | Daichong's Blog&summary=引言本文介绍的是在虚拟机上搭建，实际情况其实和真正的线上环境一毛一样，使用的系统是Centos 7。
 什么是主从复制？原理是什么？答：简单点理解，主从复制其实就是两个数据库数据的项目备份过程。其原理就是主库产生的操作都会生成binlog传入从库，从库通过I/O线程把binlog写入relaylog，然后从库创建I/O线程执行relaylog进行数据备份。"
           
           >
@@ -435,7 +435,7 @@
       
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3aQW4cMQwEwP3/p51rDMfjblJaOEDNKVhnpCkdJKKp1yt+Pr48X3//+5fv/vp1zHb2140HDw8Pb/3pz4zv/s8zuH03X7jnMfHw8PDu8Z437nbo2WGQ4Ovx8fDw8H4Nrx0hKc3zkhoPDw/v/+X9UM4+RgltkIGHh4f323izErmNIZID43n8i1kLHh4eXszLu0i/599X+nt4eHh46656Wy6fino3X/hpFjw8PLwLvP00beO/vUbQXrrCw8PDu82bbf15ZJA3w5LWWrIQn37Bw8PDu8BrD4ZTAe5mCdrrC3h4eHhneW3Jm39csbqjVlk0Lx4eHt4F3n47bhtmz5jZsfRqX8bDw8Nb8NoodlZGt1FvvsRRfw8PDw/vGu/sxGcD3NkpgIeHh3ebty9nZ+znRcxHwMPDw3snL79amjS0ZuV4HmoUV2Dx8PDwLvP2jat8Q08WYrb0n+bFw8PDu8ZrYclnzdr8eStumLXg4eHhHeK1bf786lXb+tqEyKuSGg8PD2/Ey7f7tiCeHRJttPGPefHw8PAu8NpwYXYtYF/lnmqY4eHh4e15m2hg1vSaLeKBS1d4eHh4h3jJlj37JY8nNte5igIdDw8P7wIvORLysCAPavNG2qzlhoeHh3eDlzeiZnFDu+nPjp9vZ8fDw8N7C28TJeQbdx5/5EfRsNbGw8PDG/Hq1+KDJH+33fRXV6/w8PDw1rz2WkBScOfHzKnW1w9hBB4eHt6a91E+eXgxa4zlMUfUDMPDw8O7wGs337wx1jJmy/o69eDh4eGVvNm23ja02mh4c4EADw8P7z28NjLI490ktE2owwMMDw8P79fw8msBM+pmcQ8cDHh4eHiXeW3g2wYZeViMh4eH905e8qGzC6b5RYS8WK9vRuDh4eEd5bV16aaF345zuI+Hh4eHt+X9AQuPaG3lZAOoAAAAAElFTkSuQmCC'>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aQXIbMQwEQP3/00pVTkklogYAIevQe3LJMpfNAwkP8XjEz/P3k3znz28mn5zH+fd5bDx4eHh4ramfh8s/OY88WcRXb3/zFjw8PLw1XnW46uevXn9elHwpX36Oh4eH96O8almcUJNJn+eDh4eH9/28STl+Jp0XDg8PD+/beNVJVKnnkro3h8tZCx4eHt7CLdL3/Lx4v4eHh4c3uFXPL8POIWw1pJiEGn+Ng4eHh7fASy6x8mv+ZHJ5q1YeGb/5Jh4eHt5VXjJQ/q9+NXSYj/Dm+MHDw8Nb4+VtT5NjYFKg9xYIDw8Pb4PXC3B7wUGvNO+R8PDw8D7D67UO5EV59YCZF+h4eHh4e7xzmdsrhSdNCXnkEYHx8PDwrvKiq/fi9r1xhPSiZDw8PLw9XvUiqnplNYl989oYDw8P75O8alCbb/fJpHtFcxQK4+Hh4X2E18s/q0XzPNiNwmU8PDy8BV61aWnSClBdrLshLx4eHt5dXvXyvhe/5iNfjjbw8PDwrvLykvRZfKqXWIVwNi/Z8fDw8NZ4d6dVbbfK/yo5Tl5mLXh4eHhXeflEexdgvVh23sqAh4eHt8Hb2PrnZXo+fvRbPDw8vKu8JFDIL7dyajUyzueJh4eHt82rvuDWtl5d0Ci0zUtqPDw8vAGv+md5ADFvI6hGt3h4eHif51Vfn1yS9WKOqFBOmlnx8PDwFni9+CA5EvKm0uqiTEJePDw8vDnvWXzmLVnV2Ddfjv+Mg4eHh7fA6224k5K3Gs5OGhHw8PDw9nj5YTApiKttB5OjBQ8PD+8zvPlhkAe1vSK7ugR4eHh438CrbuWTa7Dk8ChfeuHh4eH9EG8e5labrs6wN+Pg4eHhrfHuhhH5tp5s9NXjAQ8PD2+b1+vVSkrneYtA0vJVxuDh4eH1eb8A7Ohf9CFMI1EAAAAASUVORK5CYII='>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
         
@@ -445,7 +445,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://www.daichongweb.com/架构之路-mysql主从复制基础配置篇/&title=架构之路-mysql主从复制基础配置篇 | Daichong's Blog&summary=引言本文介绍的是在虚拟机上搭建，实际情况其实和真正的线上环境一毛一样，使用的系统是Centos 7。
+          href="http://service.weibo.com/share/share.php?url=http://www.daichongweb.com/架构之路-mysql主从复制基础搭建篇/&title=架构之路-mysql主从复制基础配置篇 | Daichong's Blog&summary=引言本文介绍的是在虚拟机上搭建，实际情况其实和真正的线上环境一毛一样，使用的系统是Centos 7。
 什么是主从复制？原理是什么？答：简单点理解，主从复制其实就是两个数据库数据的项目备份过程。其原理就是主库产生的操作都会生成binlog传入从库，从库通过I/O线程把binlog写入relaylog，然后从库创建I/O线程执行relaylog进行数据备份。"
           
           >

@@ -297,7 +297,7 @@
       
         
   <h2 class="title">
-    <a href="../../架构之路-mysql主从复制基础配置篇/">
+    <a href="../../架构之路-mysql主从复制基础搭建篇/">
       架构之路-mysql主从复制基础配置篇
     </a>
   </h2>
@@ -368,7 +368,7 @@
 <h4 id="什么是主从复制？原理是什么？"><a href="#什么是主从复制？原理是什么？" class="headerlink" title="什么是主从复制？原理是什么？"></a>什么是主从复制？原理是什么？</h4><p>答：简单点理解，主从复制其实就是两个数据库数据的项目备份过程。其原理就是主库产生的操作都会生成<code>binlog</code>传入从库，从库通过<code>I/O</code>线程把<code>binlog</code>写入<code>relaylog</code>，然后从库创建<code>I/O</code>线程执行<code>relaylog</code>进行数据备份。<br></p>
       
         <div class="readmore">
-          <a href="../../架构之路-mysql主从复制基础配置篇/" class="flat-box">
+          <a href="../../架构之路-mysql主从复制基础搭建篇/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
