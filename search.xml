@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>架构之路-mysql主从复制基础配置篇</title>
+    <title>架构之路-mysql主从复制基础搭建篇</title>
     <url>/%E6%9E%B6%E6%9E%84%E4%B9%8B%E8%B7%AF-mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E5%9F%BA%E7%A1%80%E6%90%AD%E5%BB%BA%E7%AF%87/</url>
     <content><![CDATA[<h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>本文介绍的是在虚拟机上搭建，实际情况其实和真正的线上环境一毛一样，使用的系统是Centos 7。</p>
 <h4 id="什么是主从复制？原理是什么？"><a href="#什么是主从复制？原理是什么？" class="headerlink" title="什么是主从复制？原理是什么？"></a>什么是主从复制？原理是什么？</h4><p>答：简单点理解，主从复制其实就是两个数据库数据的项目备份过程。其原理就是主库产生的操作都会生成<code>binlog</code>传入从库，从库通过<code>I/O</code>线程把<code>binlog</code>写入<code>relaylog</code>，然后从库创建<code>I/O</code>线程执行<code>relaylog</code>进行数据备份。<br><a id="more"></a></p>
