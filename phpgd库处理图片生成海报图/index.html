@@ -358,7 +358,7 @@
           <blockquote><p>一.引言</p>
 </blockquote>
 <p>&emsp;好久没写博客了，不知道该写些什么。<br>&emsp;正发愁呢，突然发现了一个好玩的东西。<br>&emsp;是什么呢？是php的一个扩展GD库。</p>
-<p>&emsp;为什么说他好玩？我刚开始想的是用gd库做一个画，金黄的太阳、碧蓝的天空下面有绿色的草地、草地上有幢五颜六色的房子和一个坐在草里玩电脑的男孩，以及旁边的一只白猫…<br>后来真的要做的时候才发现，这也太难了。除非全是用图片组合成的才用可能…但是真正的图片确也很难到达我的要求，那就算了吧，想象还是美好的。</p>
+<p>&emsp;为什么说他好玩？因为GD库就像一个图片处理器，它可以组合图片、剪辑图片等等….</p>
 <p>&emsp;后来经过整理和实践发现，这个东西比较适合做产品推广图来用，更加适合在公众号或小程序里跟二维码结合起来使用。<br><a id="more"></a><br><blockquote><p>二.简单介绍</p>
 </blockquote><br>&emsp;1).如何下载类库&amp;&amp;测试demo，大家可以从<font color="#ff5722">github</font>上拉取，地址：<a href="https://github.com/DaiChongyu/phpgd-CreatePoster" target="_blank" rel="noopener">类库&&demo</a><br>&emsp;2).如何使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">use \CreatePoster\CreateHelper;</span><br><span class="line">require &apos;./gd.php&apos;;</span><br><span class="line">CreateHelper::start();</span><br></pre></td></tr></table></figure><br>&emsp;3).注意事项：<br>&emsp;&emsp;1.写入字体要引入字体文件，文件路径一般为绝对路径。<br>&emsp;&emsp;2.下载地址可以在load函数中配置。<br>&emsp;&emsp;3.主图最好是png格式，这样清晰度会很高。<br>&emsp;&emsp;4.使用CreateImage创建画板时，如果传入的图片较小，如需放大请使用第4和第5个参数。</p>
 <p><div style="display: flex;justify-content: space-around;"><br>    <div style="display: inline-block;"><img src="/phpgd库处理图片生成海报图/img/error.png" width="300"></div><div style="display: inline-block;"><img src="/phpgd库处理图片生成海报图/img/success1.png" width="300"></div><br></div><br>&emsp;&emsp;5.使用CreateImage创建画板时，注意imagecolortransparent使用，他会把画板变为透明。</p>
@@ -376,10 +376,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-23T11:07:49+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-21T08:20:35+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年10月23日</p>
+    <p>最后更新于 2020年1月21日</p>
   </a>
 </div>
 
@@ -404,7 +404,7 @@
           href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.daichongweb.com/phpgd库处理图片生成海报图/&title=【原创】phpgd库处理图片生成海报图 | Daichong's Blog&summary=一.引言
 
 &emsp;好久没写博客了，不知道该写些什么。&emsp;正发愁呢，突然发现了一个好玩的东西。&emsp;是什么呢？是php的一个扩展GD库。
-&emsp;为什么说他好玩？我刚开始想的是用gd库做一个画，金黄的太阳、碧蓝的天空下面有绿色的草地、草地上有幢五颜六色的房子和一个坐在草里玩电脑的男孩，以及旁边的一只白猫…后来真的要做的时候才发现，这也太难了。除非全是用图片组合成的才用可能…但是真正的图片确也很难到达我的要求，那就算了吧，想象还是美好的。
+&emsp;为什么说他好玩？因为GD库就像一个图片处理器，它可以组合图片、剪辑图片等等….
 &emsp;后来经过整理和实践发现，这个东西比较适合做产品推广图来用，更加适合在公众号或小程序里跟二维码结合起来使用。"
           
           >
@@ -420,7 +420,7 @@
           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.daichongweb.com/phpgd库处理图片生成海报图/&title=【原创】phpgd库处理图片生成海报图 | Daichong's Blog&summary=一.引言
 
 &emsp;好久没写博客了，不知道该写些什么。&emsp;正发愁呢，突然发现了一个好玩的东西。&emsp;是什么呢？是php的一个扩展GD库。
-&emsp;为什么说他好玩？我刚开始想的是用gd库做一个画，金黄的太阳、碧蓝的天空下面有绿色的草地、草地上有幢五颜六色的房子和一个坐在草里玩电脑的男孩，以及旁边的一只白猫…后来真的要做的时候才发现，这也太难了。除非全是用图片组合成的才用可能…但是真正的图片确也很难到达我的要求，那就算了吧，想象还是美好的。
+&emsp;为什么说他好玩？因为GD库就像一个图片处理器，它可以组合图片、剪辑图片等等….
 &emsp;后来经过整理和实践发现，这个东西比较适合做产品推广图来用，更加适合在公众号或小程序里跟二维码结合起来使用。"
           
           >
@@ -444,7 +444,7 @@
           href="http://service.weibo.com/share/share.php?url=http://www.daichongweb.com/phpgd库处理图片生成海报图/&title=【原创】phpgd库处理图片生成海报图 | Daichong's Blog&summary=一.引言
 
 &emsp;好久没写博客了，不知道该写些什么。&emsp;正发愁呢，突然发现了一个好玩的东西。&emsp;是什么呢？是php的一个扩展GD库。
-&emsp;为什么说他好玩？我刚开始想的是用gd库做一个画，金黄的太阳、碧蓝的天空下面有绿色的草地、草地上有幢五颜六色的房子和一个坐在草里玩电脑的男孩，以及旁边的一只白猫…后来真的要做的时候才发现，这也太难了。除非全是用图片组合成的才用可能…但是真正的图片确也很难到达我的要求，那就算了吧，想象还是美好的。
+&emsp;为什么说他好玩？因为GD库就像一个图片处理器，它可以组合图片、剪辑图片等等….
 &emsp;后来经过整理和实践发现，这个东西比较适合做产品推广图来用，更加适合在公众号或小程序里跟二维码结合起来使用。"
           
           >
