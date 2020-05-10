@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>mac下使用homebrew安装指定版本node</title>
+    <url>/mac%E4%B8%8B%E4%BD%BF%E7%94%A8homebrew%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%ACnode/</url>
+    <content><![CDATA[<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>&emsp;mac下的homebrew直接使用<code>brew install node</code>安装的node版本是<code>14.+</code>，这给很多程序带来了问题，如果直接安装低版本的node会造成‘npm’等无法使用。</p>
+<h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew remove node</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="解绑"><a href="#解绑" class="headerlink" title="解绑"></a>解绑</h4><p>&emsp;卸载之后要先把之前node解除连接。<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew unlink node</span><br></pre></td></tr></table></figure></p>
+<h4 id="查找可用的node版本"><a href="#查找可用的node版本" class="headerlink" title="查找可用的node版本"></a>查找可用的node版本</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew search node</span><br></pre></td></tr></table></figure>
+<img src="/mac下使用homebrew安装指定版本node/img/2.png" width="500">
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install node@10</span><br></pre></td></tr></table></figure>
+<img src="/mac下使用homebrew安装指定版本node/img/3.png" width="500">
+<h4 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi ~/.bash_profile</span><br><span class="line">export PATH="/usr/local/opt/node@10/bin:$PATH"</span><br></pre></td></tr></table></figure>
+<img src="/mac下使用homebrew安装指定版本node/img/4.png" width="500">
+<p>&emsp;经过此步骤还是无法在终端使用‘node -v’就增加<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi ~/.bash_profile</span><br><span class="line">alias node='/usr/local/opt/node@10/bin/node'</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;无法使用<code>npm</code>等情况执行<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew link --overwrite --force node@10</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>php生成海报图出现图片损坏的问题</title>
     <url>/php%E7%94%9F%E6%88%90%E6%B5%B7%E6%8A%A5%E5%9B%BE%E5%87%BA%E7%8E%B0%E5%9B%BE%E7%89%87%E6%8D%9F%E5%9D%8F%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>&emsp;近年小程序、微信发展迅速。微信、微博病毒式传播使用户从传统的APP上向<code>即扫即用、无需安装</code>的小程序上转化。而微信公众号、小程序的迅速发展离不开转发、二维码分享。</p>

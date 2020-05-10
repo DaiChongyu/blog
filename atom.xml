@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.daichongweb.com/"/>
-  <updated>2020-05-10T10:02:04.299Z</updated>
+  <updated>2020-05-10T11:26:34.991Z</updated>
   <id>http://www.daichongweb.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mac下使用homebrew安装指定版本node</title>
+    <link href="http://www.daichongweb.com/mac%E4%B8%8B%E4%BD%BF%E7%94%A8homebrew%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%ACnode/"/>
+    <id>http://www.daichongweb.com/mac下使用homebrew安装指定版本node/</id>
+    <published>2020-05-10T11:21:41.000Z</published>
+    <updated>2020-05-10T11:26:34.991Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>&emsp;mac下的homebrew直接使用<code>brew install node</code>安装的node版本是<code>14.+</code>，这给很多程序带来了问题，如果直接安装低版本的node会造成‘npm’等无法使用。</p><h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew remove node</span><br></pre></td></tr></table></figure><a id="more"></a><h4 id="解绑"><a href="#解绑" class="headerlink" title="解绑"></a>解绑</h4><p>&emsp;卸载之后要先把之前node解除连接。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew unlink node</span><br></pre></td></tr></table></figure></p><h4 id="查找可用的node版本"><a href="#查找可用的node版本" class="headerlink" title="查找可用的node版本"></a>查找可用的node版本</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew search node</span><br></pre></td></tr></table></figure><img src="/mac下使用homebrew安装指定版本node/img/2.png" width="500"><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node@10</span><br></pre></td></tr></table></figure><img src="/mac下使用homebrew安装指定版本node/img/3.png" width="500"><h4 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.bash_profile</span><br><span class="line">export PATH="/usr/local/opt/node@10/bin:$PATH"</span><br></pre></td></tr></table></figure><img src="/mac下使用homebrew安装指定版本node/img/4.png" width="500"><p>&emsp;经过此步骤还是无法在终端使用‘node -v’就增加<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.bash_profile</span><br><span class="line">alias node='/usr/local/opt/node@10/bin/node'</span><br></pre></td></tr></table></figure></p><p>&emsp;无法使用<code>npm</code>等情况执行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew link --overwrite --force node@10</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h4&gt;&lt;p&gt;&amp;emsp;mac下的homebrew直接使用&lt;code&gt;brew install node&lt;/code&gt;安装的node版本是&lt;code&gt;14.+&lt;/code&gt;，这给很多程序带来了问题，如果直接安装低版本的node会造成‘npm’等无法使用。&lt;/p&gt;
+&lt;h4 id=&quot;卸载&quot;&gt;&lt;a href=&quot;#卸载&quot; class=&quot;headerlink&quot; title=&quot;卸载&quot;&gt;&lt;/a&gt;卸载&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew remove node&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="node" scheme="http://www.daichongweb.com/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title>php生成海报图出现图片损坏的问题</title>
@@ -432,29 +453,6 @@
     
     
       <category term="redis" scheme="http://www.daichongweb.com/tags/redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决nginx循环重定向问题</title>
-    <link href="http://www.daichongweb.com/%E8%A7%A3%E5%86%B3nginx%E5%BE%AA%E7%8E%AF%E9%87%8D%E5%AE%9A%E5%90%91%E9%97%AE%E9%A2%98/"/>
-    <id>http://www.daichongweb.com/解决nginx循环重定向问题/</id>
-    <published>2019-09-09T03:12:07.000Z</published>
-    <updated>2019-10-23T03:07:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><b>一、什么是重定向、循环重定向</b></p><p>&emsp;（1）重定向是指浏览器先访问了服务器A，然后服务器A带着请求的参数（header、状态码3xx）返回到地址为B的服务器上。<br>&emsp;（2）循环重定向是指服务器A重定向到了服务器B，服务器B由于某种原因又重定向到了A，这样就构成了重定向循环。</p><p><b>二、3xx重定向状态码</b></p><p>&emsp;（1）301(Move Permanently)：永久性重定向，请求的资源被分配了新的URI，以后都使用这个（get）。<br>&emsp;（2）302(Found)：临时性重定向，请求的资源被分配了新的URI，本次使用这个（get，允许缓存）。<br>&emsp;（3）303(See Other)：请求资源存在另一个URI，应使用get方法获取请求资源。<br>&emsp;（4）307(Temporary Redirect)：类似于302，只是302的POST方法会变为GET，而307的不会。<br><a id="more"></a><br><b>三、怎么产生的？</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.daichongweb.cn;</span><br><span class="line"></span><br><span class="line">    root   /site/hexo/public;</span><br><span class="line">    index  index.html;</span><br><span class="line"></span><br><span class="line">    # 这段是产生循环重定向的原因</span><br><span class="line">    # 当浏览器访问 www.daichongweb.cn 时发现不是https就会进行重定向，</span><br><span class="line">    # 但重定向到https之后又没有判断是否是https，也就是没有禁止跳转，最终造成了循环</span><br><span class="line">    return  301 https://$host$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><b>四、怎么解决？</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.daichongweb.cn;</span><br><span class="line"></span><br><span class="line">    root   /site/hexo/public;</span><br><span class="line">    index  index.html;</span><br><span class="line"></span><br><span class="line">    # 通过上面的解释逻辑就变得相对简单了，只需要增加一个判断就可以解决</span><br><span class="line">    if ($scheme = http) &#123;</span><br><span class="line">        return 301 https://$host$request_uri;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><b>四、总结</b></p><p>&emsp;在项目开发中经常会用到重定向，认识比较常见的状态码对网络请求的判断又很大帮助。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;b&gt;一、什么是重定向、循环重定向&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;&amp;emsp;（1）重定向是指浏览器先访问了服务器A，然后服务器A带着请求的参数（header、状态码3xx）返回到地址为B的服务器上。&lt;br&gt;&amp;emsp;（2）循环重定向是指服务器A重定向到了服务器B，服务器B由于某种原因又重定向到了A，这样就构成了重定向循环。&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;二、3xx重定向状态码&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;&amp;emsp;（1）301(Move Permanently)：永久性重定向，请求的资源被分配了新的URI，以后都使用这个（get）。&lt;br&gt;&amp;emsp;（2）302(Found)：临时性重定向，请求的资源被分配了新的URI，本次使用这个（get，允许缓存）。&lt;br&gt;&amp;emsp;（3）303(See Other)：请求资源存在另一个URI，应使用get方法获取请求资源。&lt;br&gt;&amp;emsp;（4）307(Temporary Redirect)：类似于302，只是302的POST方法会变为GET，而307的不会。&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://www.daichongweb.com/tags/linux/"/>
     
   </entry>
   
