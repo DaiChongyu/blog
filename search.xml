@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>快速入门java</title>
+    <url>/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8java/</url>
+    <content><![CDATA[<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>&emsp;关于java不用多说，近几年一直排在高级编程语言的第一位，庞大的开发组织和使用率使整个java生态非常的健壮。相比php来说比较难上手，在spring系列框架出世之后，整个项目结构非常的简单。</p>
+<p>&emsp;以我自己为例，一直从事php开发，会vue、小程序之类的前端开发。在学习了几天java基础的前提下，直接上手springboot，三天时间熟悉了框架接口和开发规范，并做了几个CURD的接口（对于php来说这其实已经入门了，嘿嘿）。</p>
+<p>&emsp;废话不多说，咱们直接来讲如何快速入门java。<br><a id="more"></a></p>
+<h4 id="关于基础"><a href="#关于基础" class="headerlink" title="关于基础"></a>关于基础</h4><p>&emsp;在使用springboot开发之前，必须要把java的基础过一遍，绝不能好高骛远。</p>
+<h5 id="学习路径"><a href="#学习路径" class="headerlink" title="学习路径"></a>学习路径</h5><ul>
+<li><ol>
+<li>基础语法</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>基本数据类型（int、string、float、array、object…）</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>对象和类（继承、多态、封装、抽象、实例、方法、重载）</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>变量类型（类变量（静态变量）、局部变量、实例变量）</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>修饰符（public 、private 、protected）</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>运算符（算数运算符、关系运算符、逻辑运算符）</li>
+</ol>
+</li>
+<li><ol start="7">
+<li>循环（for、while）</li>
+</ol>
+</li>
+<li><ol start="8">
+<li>条件（if、else、switch case）</li>
+</ol>
+</li>
+<li>9. </li>
+</ul>
+]]></content>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mac下使用homebrew安装指定版本node</title>
     <url>/mac%E4%B8%8B%E4%BD%BF%E7%94%A8homebrew%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%ACnode/</url>
     <content><![CDATA[<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>&emsp;mac下的homebrew直接使用<code>brew install node</code>安装的node版本是<code>14.+</code>，这给很多程序带来了问题，如果直接安装低版本的node会造成‘npm’等无法使用。</p>
