@@ -7,7 +7,7 @@
 <h5 id="亲测可激活"><a href="#亲测可激活" class="headerlink" title="亲测可激活"></a>亲测可激活</h5><blockquote>
 <p>1.IntelliJ IDEA 2020.2及以下版本<br>2.PhpStorm 2020.2及以下版本<br>3.WebStorm 2020.2及以下版本<br><a id="more"></a></p>
 </blockquote>
-<h4 id="下载补丁"><a href="#下载补丁" class="headerlink" title="下载补丁"></a>下载补丁</h4><a href="https://www.daichongweb.cn/image/jetbrains-agent-2020.zip" target="_blank" rel="noopener">下载补丁</a>
+<h4 id="下载补丁"><a href="#下载补丁" class="headerlink" title="下载补丁"></a>下载补丁</h4><a href="https://www.daichongweb.cn/image/jetbrains-agent-2020.jar" target="_blank" rel="noopener">下载补丁</a>
 <h4 id="如何激活"><a href="#如何激活" class="headerlink" title="如何激活"></a>如何激活</h4><p>&emsp;(1).运行IDE（新安装的选择<code>Evaluate</code>）</p>
 <p>&emsp;(2).随便打开或者创建一个项目，成功后保持不动</p>
 <p>&emsp;把补丁解压后的<code>jetbrains-agent.jar</code>拖入到IDE中，弹框后点击<code>Restart</code>。</p>
@@ -1477,19 +1477,6 @@
       </tags>
   </entry>
   <entry>
-    <title>linux重装系统后ssh连接认证的问题</title>
-    <url>/Linux%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8Essh%E8%BF%9E%E6%8E%A5%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<figure class="highlight plain"><figcaption><span>[命令行报错提示]</span></figcaption><table><tr><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line"></span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line"></span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line"></span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line"></span><br><span class="line">The fingerprint for the ECDSA key sent by the remote host is</span><br><span class="line"></span><br><span class="line">SHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.</span><br><span class="line"></span><br><span class="line">Please contact your system administrator.</span><br><span class="line"></span><br><span class="line">Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.</span><br><span class="line"></span><br><span class="line">Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3</span><br><span class="line"></span><br><span class="line">ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.</span><br><span class="line"></span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure>
-<p>对于一个小白来说，这个是完全看不懂的，下面就告诉大家如何解决这个问题。</p>
-<p>首先用ssh第一次连接sever,sever会生成一个公钥和一个私钥，私钥存在连接方的本地，系统重装后sever会重新生成一个公钥，然后连接方的私钥已经和sever的公钥不匹配，导致报错无法登录。</p>
-<p>解决方法：</p>
-<p>ssh-keygen -R xx.xx.xx.xx 后面跟ip即可删除指定服务器的公钥文件，再次连接时重新生成，并覆盖掉连接方的私钥。</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>liunx重装系统后ssh连接认证的问题</title>
     <url>/liunx%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8Essh%E8%BF%9E%E6%8E%A5%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<figure class="highlight plain"><figcaption><span>[命令行报错提示]</span></figcaption><table><tr><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line"></span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line"></span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line"></span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line"></span><br><span class="line">The fingerprint for the ECDSA key sent by the remote host is</span><br><span class="line"></span><br><span class="line">SHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.</span><br><span class="line"></span><br><span class="line">Please contact your system administrator.</span><br><span class="line"></span><br><span class="line">Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.</span><br><span class="line"></span><br><span class="line">Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3</span><br><span class="line"></span><br><span class="line">ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.</span><br><span class="line"></span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure>
@@ -1500,6 +1487,19 @@
 ]]></content>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux重装系统后ssh连接认证的问题</title>
+    <url>/Linux%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8Essh%E8%BF%9E%E6%8E%A5%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<figure class="highlight plain"><figcaption><span>[命令行报错提示]</span></figcaption><table><tr><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line"></span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line"></span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line"></span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line"></span><br><span class="line">The fingerprint for the ECDSA key sent by the remote host is</span><br><span class="line"></span><br><span class="line">SHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.</span><br><span class="line"></span><br><span class="line">Please contact your system administrator.</span><br><span class="line"></span><br><span class="line">Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.</span><br><span class="line"></span><br><span class="line">Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3</span><br><span class="line"></span><br><span class="line">ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.</span><br><span class="line"></span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure>
+<p>对于一个小白来说，这个是完全看不懂的，下面就告诉大家如何解决这个问题。</p>
+<p>首先用ssh第一次连接sever,sever会生成一个公钥和一个私钥，私钥存在连接方的本地，系统重装后sever会重新生成一个公钥，然后连接方的私钥已经和sever的公钥不匹配，导致报错无法登录。</p>
+<p>解决方法：</p>
+<p>ssh-keygen -R xx.xx.xx.xx 后面跟ip即可删除指定服务器的公钥文件，再次连接时重新生成，并覆盖掉连接方的私钥。</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
