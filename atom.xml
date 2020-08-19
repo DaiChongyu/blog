@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.daichongweb.com/"/>
-  <updated>2020-05-17T06:14:50.746Z</updated>
+  <updated>2020-08-19T02:58:22.367Z</updated>
   <id>http://www.daichongweb.com/</id>
   
   <author>
@@ -17,19 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>快速入门java</title>
-    <link href="http://www.daichongweb.com/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8java/"/>
-    <id>http://www.daichongweb.com/快速入门java/</id>
-    <published>2020-05-17T05:45:58.000Z</published>
-    <updated>2020-05-17T06:14:50.746Z</updated>
+    <title>JetBrains2020全家桶激活</title>
+    <link href="http://www.daichongweb.com/JetBrains2020%E5%85%A8%E5%AE%B6%E6%A1%B6%E6%BF%80%E6%B4%BB/"/>
+    <id>http://www.daichongweb.com/JetBrains2020全家桶激活/</id>
+    <published>2020-08-19T02:28:42.000Z</published>
+    <updated>2020-08-19T02:58:22.367Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>&emsp;关于java不用多说，近几年一直排在高级编程语言的第一位，庞大的开发组织和使用率使整个java生态非常的健壮。相比php来说比较难上手，在spring系列框架出世之后，整个项目结构非常的简单。</p><p>&emsp;以我自己为例，一直从事php开发，会vue、小程序之类的前端开发。在学习了几天java基础的前提下，直接上手springboot，三天时间熟悉了框架接口和开发规范，并做了几个CURD的接口（对于php来说这其实已经入门了，嘿嘿）。</p><p>&emsp;废话不多说，咱们直接来讲如何快速入门java。<br><a id="more"></a></p><h4 id="关于基础"><a href="#关于基础" class="headerlink" title="关于基础"></a>关于基础</h4><p>&emsp;在使用springboot开发之前，必须要把java的基础过一遍，绝不能好高骛远。</p><h5 id="学习路径"><a href="#学习路径" class="headerlink" title="学习路径"></a>学习路径</h5><ul><li><ol><li>基础语法</li></ol></li><li><ol start="2"><li>基本数据类型（int、string、float、array、object…）</li></ol></li><li><ol start="3"><li>对象和类（继承、多态、封装、抽象、实例、方法、重载）</li></ol></li><li><ol start="4"><li>变量类型（类变量（静态变量）、局部变量、实例变量）</li></ol></li><li><ol start="5"><li>修饰符（public 、private 、protected）</li></ol></li><li><ol start="6"><li>运算符（算数运算符、关系运算符、逻辑运算符）</li></ol></li><li><ol start="7"><li>循环（for、while）</li></ol></li><li><ol start="8"><li>条件（if、else、switch case）</li></ol></li><li>9. </li></ul>]]></content>
+    <content type="html"><![CDATA[<h4 id="官方下载最新版"><a href="#官方下载最新版" class="headerlink" title="官方下载最新版"></a>官方下载最新版</h4><a href="https://www.jetbrains.com" target="_blank" rel="noopener">JetBrains官网下载</a><h5 id="亲测可激活"><a href="#亲测可激活" class="headerlink" title="亲测可激活"></a>亲测可激活</h5><blockquote><p>1.IntelliJ IDEA 2020.2及以下版本<br>2.PhpStorm 2020.2及以下版本<br>3.WebStorm 2020.2及以下版本<br><a id="more"></a></p></blockquote><h4 id="下载补丁"><a href="#下载补丁" class="headerlink" title="下载补丁"></a>下载补丁</h4><a href="https:www.daichongweb.cn/JetBrains2020全家桶激活/file/jetbrains-agent.zip" target="_blank" rel="noopener">下载补丁</a><h4 id="如何激活"><a href="#如何激活" class="headerlink" title="如何激活"></a>如何激活</h4><p>&emsp;(1).运行IDE（新安装的选择<code>Evaluate</code>）</p><p>&emsp;(2).随便打开或者创建一个项目，成功后保持不动</p><p>&emsp;把补丁解压后的<code>jetbrains-agent.jar</code>拖入到IDE中，弹框后点击<code>Restart</code>。</p><p>&emsp;重启后会弹出【JetbrainsAgent 配置助手】，选择<code>Activation Code</code>，复制下面的安装参数，然后点击为<code>XXX</code>安装就可以了！！！</p><h4 id="安装参数"><a href="#安装参数" class="headerlink" title="安装参数"></a>安装参数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LFq51qqupnaiTNn39w6zATiOTxZI2JYuRJEBlzmUDv4zeeNlXhMgJZVb0q5QkLr+CIUrSuNB7ucifrGXawLB4qswPOXYG7+ItDNUR/<span class="number">9</span>UkLTUWlnHLX07hnR1USOrWIjTmbytcIKEdaI6x0RskyotuItj84xxoSBP/iRBW2EHpOc</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h4&gt;&lt;p&gt;&amp;emsp;关于java不用多说，近几年一直排在高级编程语言的第一位，庞大的开发组织和使用率使整个java生态非常的健壮。相比php来说比较难上手，在spring系列框架出世之后，整个项目结构非常的简单。&lt;/p&gt;
-&lt;p&gt;&amp;emsp;以我自己为例，一直从事php开发，会vue、小程序之类的前端开发。在学习了几天java基础的前提下，直接上手springboot，三天时间熟悉了框架接口和开发规范，并做了几个CURD的接口（对于php来说这其实已经入门了，嘿嘿）。&lt;/p&gt;
-&lt;p&gt;&amp;emsp;废话不多说，咱们直接来讲如何快速入门java。&lt;br&gt;&lt;/p&gt;
+      &lt;h4 id=&quot;官方下载最新版&quot;&gt;&lt;a href=&quot;#官方下载最新版&quot; class=&quot;headerlink&quot; title=&quot;官方下载最新版&quot;&gt;&lt;/a&gt;官方下载最新版&lt;/h4&gt;&lt;a href=&quot;https://www.jetbrains.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JetBrains官网下载&lt;/a&gt;
+&lt;h5 id=&quot;亲测可激活&quot;&gt;&lt;a href=&quot;#亲测可激活&quot; class=&quot;headerlink&quot; title=&quot;亲测可激活&quot;&gt;&lt;/a&gt;亲测可激活&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;1.IntelliJ IDEA 2020.2及以下版本&lt;br&gt;2.PhpStorm 2020.2及以下版本&lt;br&gt;3.WebStorm 2020.2及以下版本&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="开发工具" scheme="http://www.daichongweb.com/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fastjson类型转换</title>
+    <link href="http://www.daichongweb.com/fastjson%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://www.daichongweb.com/fastjson类型转换/</id>
+    <published>2020-05-25T03:15:32.000Z</published>
+    <updated>2020-08-19T02:29:24.050Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="jsonString转map"><a href="#jsonString转map" class="headerlink" title="jsonString转map"></a>jsonString转map</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.parseObject(string)</span><br></pre></td></tr></table></figure><h4 id="实体类转jsonstring"><a href="#实体类转jsonstring" class="headerlink" title="实体类转jsonstring"></a>实体类转jsonstring</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.toJSONString(javaClass)</span><br></pre></td></tr></table></figure><a id="more"></a><h4 id="存入redis队列之前是jsonString，拿出来变成object处理办法"><a href="#存入redis队列之前是jsonString，拿出来变成object处理办法" class="headerlink" title="存入redis队列之前是jsonString，拿出来变成object处理办法"></a>存入redis队列之前是jsonString，拿出来变成object处理办法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 先转字符</span></span><br><span class="line">String value = lotteryData.index(roomId, userId).toString();</span><br><span class="line"><span class="comment">// 转map</span></span><br><span class="line">JSON.parseObject(value);</span><br></pre></td></tr></table></figure><h4 id="如何组成一个多维数组"><a href="#如何组成一个多维数组" class="headerlink" title="如何组成一个多维数组"></a>如何组成一个多维数组</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例子</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"data"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"nickname"</span>: <span class="string">"戴崇"</span>,</span><br><span class="line">            <span class="string">"userId"</span>: <span class="number">6144</span>,</span><br><span class="line">            <span class="string">"roomId"</span>: <span class="number">10086</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"nickname"</span>: <span class="string">"戴崇"</span>,</span><br><span class="line">            <span class="string">"userId"</span>: <span class="number">2174</span>,</span><br><span class="line">            <span class="string">"roomId"</span>: <span class="number">10086</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"nickname"</span>: <span class="string">"戴崇"</span>,</span><br><span class="line">            <span class="string">"userId"</span>: <span class="number">9997</span>,</span><br><span class="line">            <span class="string">"roomId"</span>: <span class="number">10086</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"code"</span>: <span class="string">"0"</span>,</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"操作成功！"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 做法</span></span><br><span class="line">List&lt;Map&lt;String, Object&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">long</span> userId : rands) &#123;</span><br><span class="line">    <span class="keyword">if</span> (userId == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    String value = lotteryData.index(roomId, userId).toString();</span><br><span class="line">    list.add(JSON.parseObject(value));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;jsonString转map&quot;&gt;&lt;a href=&quot;#jsonString转map&quot; class=&quot;headerlink&quot; title=&quot;jsonString转map&quot;&gt;&lt;/a&gt;jsonString转map&lt;/h4&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;JSON.parseObject(string)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;实体类转jsonstring&quot;&gt;&lt;a href=&quot;#实体类转jsonstring&quot; class=&quot;headerlink&quot; title=&quot;实体类转jsonstring&quot;&gt;&lt;/a&gt;实体类转jsonstring&lt;/h4&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;JSON.toJSONString(javaClass)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -428,27 +449,6 @@
       &lt;p&gt;&lt;b&gt;前篇回忆：&lt;/b&gt;&lt;/p&gt;
 &lt;p&gt;&amp;emsp;前两篇介绍了&lt;a&gt;redis&lt;/a&gt;队列如何处理订单和&lt;a&gt;JMeter&lt;/a&gt;的环境配置及安装方法，这篇根据程序开发的逻辑和习惯来解决几个问题：&lt;/p&gt;
 &lt;p&gt;&amp;emsp;&amp;emsp;（1）JMeter并发测试的基本使用。&lt;br&gt;&amp;emsp;&amp;emsp;（2）&lt;a&gt;redis&lt;/a&gt;和&lt;a&gt;mysql&lt;/a&gt;相比的性能差距如何？&lt;br&gt;&amp;emsp;&amp;emsp;（3）大量的并发和请求下&lt;a&gt;redis&lt;/a&gt;、&lt;a&gt;mysql&lt;/a&gt;、&lt;a&gt;nginx&lt;/a&gt;各自会出现的问题？&lt;br&gt;&amp;emsp;&amp;emsp;（4）遇到并发带来各种各样的问题如何解决？&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="测试" scheme="http://www.daichongweb.com/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WEB性能测试-JMeter安装</title>
-    <link href="http://www.daichongweb.com/WEB%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-JMeter%E5%AE%89%E8%A3%85/"/>
-    <id>http://www.daichongweb.com/WEB性能测试-JMeter安装/</id>
-    <published>2019-09-17T01:55:10.000Z</published>
-    <updated>2019-10-23T03:07:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><b>一、了解JMeter工具</b></p><p>&emsp;<a href="https://baike.baidu.com/item/Jmeter/3104456?fr=aladdin" target="_blank" rel="noopener">Apache JMeter</a>是 <a href="https://baike.baidu.com/item/apache/6265" target="_blank" rel="noopener">Apache</a>组织的开放源代码项目，是一个100%纯Java桌面应用，用于压力测试和性能测量。它最初被设计用于Web应用测试但后来扩展到其它测试领域。Apache JMeter可以用于对静态的和动态的资源（文件，Servlet，Perl脚本，Java对象，数据库和查询，FTP服务器或是其它资源）的性能进行测试。JMeter可以用于在服务器，网络或对象模拟繁重的负载来测试它们提供服务的受压能力或者分析不同压力条件下的总体性能情况。你可以使用JMeter提供的图形化界面，分析性能指标或者在高负载情况下测试你的服务器/脚本/对象。<br><a id="more"></a><br><b>二、JMeter的作用</b></p><p>&emsp;（1）能够对<a href="https://baike.baidu.com/item/http/243074?fr=aladdin" target="_blank" rel="noopener">HTTP</a>和<a href="https://baike.baidu.com/item/FTP%E5%8D%8F%E8%AE%AE/7651119" target="_blank" rel="noopener">FTP</a>服务器进行压力和性能测试，也可以对任何的数据库进行同样的测试（通过<a href="https://baike.baidu.com/item/JDBC" target="_blank" rel="noopener">JDBC</a>）。</p><p>&emsp;（2）完全多线程 框架允许通过多个线程并发取样和 通过单独的线程组对不同的功能同时取样。</p><p>&emsp;（3）在设计阶段，JMeter能够充当HTTP PROXY（代理）来记录IE/NETSCAPE的HTTP请求，也可以记录apache等WebServer的log文件来重现HTTP流量。当这些HTTP客户端请求被记录以后，测试运行时可以方便的设置重复次数和并发度（线程数）来产生巨大的流量。JMeter还提供可视化组件以及报表工具把量服务器在不同压力下的性能展现出来。</p><p><b>三、安装</b></p><p>&emsp;（1）JMeter是完全基于JAVA开发，首先要安装 <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">JAVA JDK</a>。</p><p>&emsp;（2）安装<a href="http://jmeter.apache.org/download_jmeter.cgi" target="_blank" rel="noopener">JMeter客户端</a>。</p><p><b>四、配置JAVA环境变量</b></p><p>&emsp;（1）右键 “我的电脑\属性”<sup>(第一步)</sup> 或 “控制面板\所有控制面板项\系统”<sup>(第一步)</sup> 找到 “高级系统设置”<sup>(第二步)</sup> 点击 “环境变量”<sup>(第三步)</sup>。</p><p>&emsp;（2）新建环境变量JAVA_HOME，值为JAVA安装的根目录。</p><img src="/WEB性能测试-JMeter安装/img/path.png"><p>&emsp;（3）新建环境变量CLASSPATH，值为JAVA安装目录下的lib/tools.jar和lib/dt.jar。</p><img src="/WEB性能测试-JMeter安装/img/path1.png"><p>&emsp;（4）修改系统变量的PATH值，增加为JAVA安装目录下的bin目录。</p><img src="/WEB性能测试-JMeter安装/img/path2.png"><p><b>五、配置JMeter环境变量</b></p><p>&emsp;（1）新建环境变量JMETER_HOME，值为JMeter的根目录。</p><img src="/WEB性能测试-JMeter安装/img/path3.png"><p>&emsp;（2）修改CLASSPATH，增加JMeter/lib/ApacheJMeter_core.jar和logkit-2.0.jar。</p><img src="/WEB性能测试-JMeter安装/img/path4.png"><p>&emsp;（3）找到JMeter/bin/JMeter.bat双击打开，如出现错误，检查是否有JMeter/lib/ApacheJMeter_core.jar这个文件，没有这个文件就是安装错误了，重新换个包安装。</p><p><b>六、打开成功演示</b></p><p>&emsp;随后会自动打开JMeter客户端。</p><img src="/WEB性能测试-JMeter安装/img/path5.png"><p><b>七、总结</b></p><p>&emsp;总体的安装还是比较简单的，就是步骤繁多，每一个步骤都不能漏，否则就会无法使用。</p><p>&emsp;下一篇将会介绍JMeter的基本使用。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;b&gt;一、了解JMeter工具&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;&amp;emsp;&lt;a href=&quot;https://baike.baidu.com/item/Jmeter/3104456?fr=aladdin&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Apache JMeter&lt;/a&gt;是 &lt;a href=&quot;https://baike.baidu.com/item/apache/6265&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Apache&lt;/a&gt;组织的开放源代码项目，是一个100%纯Java桌面应用，用于压力测试和性能测量。它最初被设计用于Web应用测试但后来扩展到其它测试领域。Apache JMeter可以用于对静态的和动态的资源（文件，Servlet，Perl脚本，Java对象，数据库和查询，FTP服务器或是其它资源）的性能进行测试。JMeter可以用于在服务器，网络或对象模拟繁重的负载来测试它们提供服务的受压能力或者分析不同压力条件下的总体性能情况。你可以使用JMeter提供的图形化界面，分析性能指标或者在高负载情况下测试你的服务器/脚本/对象。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
