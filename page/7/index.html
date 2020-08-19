@@ -705,100 +705,6 @@
       
         
   <h2 class="title">
-    <a href="../../liunx重装系统后ssh连接认证的问题/">
-      liunx重装系统后ssh连接认证的问题
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-06-04</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <figure class="highlight plain"><figcaption><span>[命令行报错提示]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line"></span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line"></span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line"></span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line"></span><br><span class="line">The fingerprint for the ECDSA key sent by the remote host is</span><br><span class="line"></span><br><span class="line">SHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.</span><br><span class="line"></span><br><span class="line">Please contact your system administrator.</span><br><span class="line"></span><br><span class="line">Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.</span><br><span class="line"></span><br><span class="line">Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3</span><br><span class="line"></span><br><span class="line">ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.</span><br><span class="line"></span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure>
-<p>对于一个小白来说，这个是完全看不懂的，下面就告诉大家如何解决这个问题。</p>
-<p>首先用ssh第一次连接sever,sever会生成一个公钥和一个私钥，私钥存在连接方的本地，系统重装后sever会重新生成一个公钥，然后连接方的私钥已经和sever的公钥不匹配，导致报错无法登录。</p>
-<p>解决方法：</p>
-<p>ssh-keygen -R xx.xx.xx.xx 后面跟ip即可删除指定服务器的公钥文件，再次连接时重新生成，并覆盖掉连接方的私钥。</p>
-
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="../../tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Linux</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
     <a href="../../Linux重装系统后ssh连接认证的问题/">
       linux重装系统后ssh连接认证的问题
     </a>
@@ -871,6 +777,100 @@
       <div class="full-width auto-padding tags">
         
           <a href="../../tags/linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>linux</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="../../liunx重装系统后ssh连接认证的问题/">
+      liunx重装系统后ssh连接认证的问题
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://www.daichongweb.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Daichongweb</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2018-06-04</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <figure class="highlight plain"><figcaption><span>[命令行报错提示]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line"></span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line"></span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line"></span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line"></span><br><span class="line">The fingerprint for the ECDSA key sent by the remote host is</span><br><span class="line"></span><br><span class="line">SHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.</span><br><span class="line"></span><br><span class="line">Please contact your system administrator.</span><br><span class="line"></span><br><span class="line">Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.</span><br><span class="line"></span><br><span class="line">Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3</span><br><span class="line"></span><br><span class="line">ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.</span><br><span class="line"></span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure>
+<p>对于一个小白来说，这个是完全看不懂的，下面就告诉大家如何解决这个问题。</p>
+<p>首先用ssh第一次连接sever,sever会生成一个公钥和一个私钥，私钥存在连接方的本地，系统重装后sever会重新生成一个公钥，然后连接方的私钥已经和sever的公钥不匹配，导致报错无法登录。</p>
+<p>解决方法：</p>
+<p>ssh-keygen -R xx.xx.xx.xx 后面跟ip即可删除指定服务器的公钥文件，再次连接时重新生成，并覆盖掉连接方的私钥。</p>
+
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="../../tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Linux</a>
         
       </div>
     
