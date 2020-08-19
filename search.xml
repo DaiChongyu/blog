@@ -13,6 +13,7 @@
 <p>&emsp;把补丁解压后的<code>jetbrains-agent.jar</code>拖入到IDE中，弹框后点击<code>Restart</code>。</p>
 <p>&emsp;重启后会弹出【JetbrainsAgent 配置助手】，选择<code>Activation Code</code>，复制下面的安装参数，然后点击为<code>XXX</code>安装就可以了！！！</p>
 <h4 id="安装参数"><a href="#安装参数" class="headerlink" title="安装参数"></a>安装参数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LFq51qqupnaiTNn39w6zATiOTxZI2JYuRJEBlzmUDv4zeeNlXhMgJZVb0q5QkLr+CIUrSuNB7ucifrGXawLB4qswPOXYG7+ItDNUR/<span class="number">9</span>UkLTUWlnHLX07hnR1USOrWIjTmbytcIKEdaI6x0RskyotuItj84xxoSBP/iRBW2EHpOc</span><br></pre></td></tr></table></figure>
+<h4 id="致谢🙏"><a href="#致谢🙏" class="headerlink" title="致谢🙏"></a>致谢🙏</h4><p>&emsp;好用的话就请评论一下再走吧！</p>
 ]]></content>
       <tags>
         <tag>开发工具</tag>
