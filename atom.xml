@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.daichongweb.com/"/>
-  <updated>2020-08-19T03:46:29.116Z</updated>
+  <updated>2020-08-19T03:50:17.504Z</updated>
   <id>http://www.daichongweb.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.daichongweb.com/JetBrains2020%E5%85%A8%E5%AE%B6%E6%A1%B6%E6%BF%80%E6%B4%BB/"/>
     <id>http://www.daichongweb.com/JetBrains2020全家桶激活/</id>
     <published>2020-08-19T02:28:42.000Z</published>
-    <updated>2020-08-19T03:46:29.116Z</updated>
+    <updated>2020-08-19T03:50:17.504Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="官方下载最新版"><a href="#官方下载最新版" class="headerlink" title="官方下载最新版"></a>官方下载最新版</h4><a href="https://www.jetbrains.com" target="_blank" rel="noopener">JetBrains官网下载</a><h5 id="亲测可激活"><a href="#亲测可激活" class="headerlink" title="亲测可激活"></a>亲测可激活</h5><blockquote><p>1.IntelliJ IDEA 2020.2及以下版本<br>2.PhpStorm 2020.2及以下版本<br>3.WebStorm 2020.2及以下版本<br><a id="more"></a></p></blockquote><h4 id="下载补丁"><a href="#下载补丁" class="headerlink" title="下载补丁"></a>下载补丁</h4><a href="https:www.daichongweb.cn/JetBrains2020全家桶激活/file/jetbrains-agent.zip" target="_blank" rel="noopener">下载补丁</a><h4 id="如何激活"><a href="#如何激活" class="headerlink" title="如何激活"></a>如何激活</h4><p>&emsp;(1).运行IDE（新安装的选择<code>Evaluate</code>）</p><p>&emsp;(2).随便打开或者创建一个项目，成功后保持不动</p><p>&emsp;把补丁解压后的<code>jetbrains-agent.jar</code>拖入到IDE中，弹框后点击<code>Restart</code>。</p><p>&emsp;重启后会弹出【JetbrainsAgent 配置助手】，选择<code>Activation Code</code>，复制下面的安装参数，然后点击为<code>XXX</code>安装就可以了！！！</p><h4 id="安装参数"><a href="#安装参数" class="headerlink" title="安装参数"></a>安装参数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LFq51qqupnaiTNn39w6zATiOTxZI2JYuRJEBlzmUDv4zeeNlXhMgJZVb0q5QkLr+CIUrSuNB7ucifrGXawLB4qswPOXYG7+ItDNUR/<span class="number">9</span>UkLTUWlnHLX07hnR1USOrWIjTmbytcIKEdaI6x0RskyotuItj84xxoSBP/iRBW2EHpOc</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h4 id="官方下载最新版"><a href="#官方下载最新版" class="headerlink" title="官方下载最新版"></a>官方下载最新版</h4><a href="https://www.jetbrains.com" target="_blank" rel="noopener">JetBrains官网下载</a><h5 id="亲测可激活"><a href="#亲测可激活" class="headerlink" title="亲测可激活"></a>亲测可激活</h5><blockquote><p>1.IntelliJ IDEA 2020.2及以下版本<br>2.PhpStorm 2020.2及以下版本<br>3.WebStorm 2020.2及以下版本<br><a id="more"></a></p></blockquote><h4 id="下载补丁"><a href="#下载补丁" class="headerlink" title="下载补丁"></a>下载补丁</h4><a href="https://www.daichongweb.cn/JetBrains2020全家桶激活/file/jetbrains-agent.zip" target="_blank" rel="noopener">下载补丁</a><h4 id="如何激活"><a href="#如何激活" class="headerlink" title="如何激活"></a>如何激活</h4><p>&emsp;(1).运行IDE（新安装的选择<code>Evaluate</code>）</p><p>&emsp;(2).随便打开或者创建一个项目，成功后保持不动</p><p>&emsp;把补丁解压后的<code>jetbrains-agent.jar</code>拖入到IDE中，弹框后点击<code>Restart</code>。</p><p>&emsp;重启后会弹出【JetbrainsAgent 配置助手】，选择<code>Activation Code</code>，复制下面的安装参数，然后点击为<code>XXX</code>安装就可以了！！！</p><h4 id="安装参数"><a href="#安装参数" class="headerlink" title="安装参数"></a>安装参数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LFq51qqupnaiTNn39w6zATiOTxZI2JYuRJEBlzmUDv4zeeNlXhMgJZVb0q5QkLr+CIUrSuNB7ucifrGXawLB4qswPOXYG7+ItDNUR/<span class="number">9</span>UkLTUWlnHLX07hnR1USOrWIjTmbytcIKEdaI6x0RskyotuItj84xxoSBP/iRBW2EHpOc</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
