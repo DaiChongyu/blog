@@ -10,9 +10,10 @@
 <h4 id="下载补丁"><a href="#下载补丁" class="headerlink" title="下载补丁"></a>下载补丁</h4><a href="https://www.daichongweb.cn/image/jetbrains-agent-2020.jar" target="_blank" rel="noopener">下载补丁</a>
 <h4 id="如何激活"><a href="#如何激活" class="headerlink" title="如何激活"></a>如何激活</h4><p>&emsp;(1).运行IDE（新安装的选择<code>Evaluate</code>）</p>
 <p>&emsp;(2).随便打开或者创建一个项目，成功后保持不动</p>
-<p>&emsp;把补丁解压后的<code>jetbrains-agent.jar</code>拖入到IDE中，弹框后点击<code>Restart</code>。</p>
-<p>&emsp;重启后会弹出【JetbrainsAgent 配置助手】，选择<code>Activation Code</code>，复制下面的安装参数，然后点击为<code>XXX</code>安装就可以了！！！</p>
+<p>&emsp;(3).把补丁解压后的<code>jetbrains-agent.jar</code>拖入到IDE中，弹框后点击<code>Restart</code>。</p>
+<p>&emsp;(4).重启后会弹出【JetbrainsAgent 配置助手】，选择<code>Activation Code</code>，复制下面的安装参数，然后点击为<code>XXX</code>安装就可以了！！！</p>
 <h4 id="安装参数"><a href="#安装参数" class="headerlink" title="安装参数"></a>安装参数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LFq51qqupnaiTNn39w6zATiOTxZI2JYuRJEBlzmUDv4zeeNlXhMgJZVb0q5QkLr+CIUrSuNB7ucifrGXawLB4qswPOXYG7+ItDNUR/<span class="number">9</span>UkLTUWlnHLX07hnR1USOrWIjTmbytcIKEdaI6x0RskyotuItj84xxoSBP/iRBW2EHpOc</span><br></pre></td></tr></table></figure>
+<h4 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h4><p>&emsp;(1).安装成功后还是跳转到激活页面，请尝试断网后再操作。<br>&emsp;(2).断网后还是无法破解，请尝试删除hosts设置的映射后再操作。</p>
 <h4 id="致谢🙏"><a href="#致谢🙏" class="headerlink" title="致谢🙏"></a>致谢🙏</h4><p>&emsp;好用的话就请评论一下再走吧！</p>
 ]]></content>
       <tags>
