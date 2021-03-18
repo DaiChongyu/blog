@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.daichongweb.com/"/>
-  <updated>2020-08-24T07:36:23.123Z</updated>
+  <updated>2021-03-18T08:07:07.470Z</updated>
   <id>http://www.daichongweb.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>外卖红包免费领，饿了吗、美团、淘宝、京东红包</title>
+    <link href="http://www.daichongweb.com/%E5%A4%96%E5%8D%96%E7%BA%A2%E5%8C%85%E5%85%8D%E8%B4%B9%E9%A2%86%EF%BC%8C%E9%A5%BF%E4%BA%86%E5%90%97%E3%80%81%E7%BE%8E%E5%9B%A2%E3%80%81%E6%B7%98%E5%AE%9D%E3%80%81%E4%BA%AC%E4%B8%9C%E7%BA%A2%E5%8C%85/"/>
+    <id>http://www.daichongweb.com/外卖红包免费领，饿了吗、美团、淘宝、京东红包/</id>
+    <published>2021-03-18T07:57:53.000Z</published>
+    <updated>2021-03-18T08:07:07.470Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="外卖红包"><a href="#外卖红包" class="headerlink" title="外卖红包"></a>外卖红包</h4><p>今天给经常点外卖的朋友推荐一个好东西，每天点外卖前可以花2秒钟领个美团外卖红包或者饿了么红包，最高66元，每天都能领，无上限！用了红包后你可能发现点外卖比直接去店里吃还要便宜，一天2顿饭，能省十多块钱！领券之后还能返现金，现金金额为订单金额<font color="#ff5722">1%-5%</font>，快来试试吧！</p><img src="/外卖红包免费领，饿了吗、美团、淘宝、京东红包/1.jpg">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;外卖红包&quot;&gt;&lt;a href=&quot;#外卖红包&quot; class=&quot;headerlink&quot; title=&quot;外卖红包&quot;&gt;&lt;/a&gt;外卖红包&lt;/h4&gt;&lt;p&gt;今天给经常点外卖的朋友推荐一个好东西，每天点外卖前可以花2秒钟领个美团外卖红包或者饿了么红包，最高66元，每天都能领，无上限
+      
+    
+    </summary>
+    
+    
+      <category term="撸羊毛" scheme="http://www.daichongweb.com/tags/%E6%92%B8%E7%BE%8A%E6%AF%9B/"/>
+    
+  </entry>
   
   <entry>
     <title>JetBrains2020全家桶激活</title>
@@ -283,7 +306,7 @@
     <link href="http://www.daichongweb.com/%E6%9E%B6%E6%9E%84%E4%B9%8B%E8%B7%AF-mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E9%85%8D%E7%BD%AE%E7%AF%87/"/>
     <id>http://www.daichongweb.com/架构之路-mysql主从复制配置篇/</id>
     <published>2019-11-12T05:09:52.000Z</published>
-    <updated>2020-08-19T03:46:29.229Z</updated>
+    <updated>2021-03-18T07:58:30.341Z</updated>
     
     <content type="html"><![CDATA[<h4 id="前篇回忆"><a href="#前篇回忆" class="headerlink" title="前篇回忆"></a>前篇回忆</h4><p>上一篇介绍了主从复制的搭建的基础流程，为这篇的配置做了铺垫。便于理解是这篇最大的亮点，说实话经过亲手尝试了主从复制之后，感觉这个东西确实不难，就简单的改几个配置就可以搞定，但是作为高级程序优化的一部分，学习还是很有必要的。<br><a id="more"></a></p><h4 id="配置介绍"><a href="#配置介绍" class="headerlink" title="配置介绍"></a>配置介绍</h4><h5 id="确认环境"><a href="#确认环境" class="headerlink" title="确认环境"></a>确认环境</h5><p>1.服务器1号：192.168.22.130（主库服务器）<br><img src="/架构之路-mysql主从复制配置篇/img/1.png"><br>2.服务器2号：192.168.22.128（从库服务器）<br><img src="/架构之路-mysql主从复制配置篇/img/2.png"></p><h5 id="主库配置"><a href="#主库配置" class="headerlink" title="主库配置"></a>主库配置</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 配置主库标识（这里数字随意，但是一定要比从库配置的数字大，必须是数字）</span></span><br><span class="line">server_id=1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 开启日志功能&amp;配置日志文件</span></span><br><span class="line">log_bin=master_log</span><br><span class="line"><span class="meta">#</span><span class="bash"> 保存退出&amp;重启mysql服务</span></span><br><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure><img src="/架构之路-mysql主从复制配置篇/img/3.png"><h5 id="配置从库连接用户"><a href="#配置从库连接用户" class="headerlink" title="配置从库连接用户"></a>配置从库连接用户</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登陆mysql</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"><span class="comment"># 进入mysql库</span></span><br><span class="line">use mysql</span><br><span class="line"><span class="comment"># 新增一个用户，并且绑定这个用户只能从192.168.22.128这个IP访问</span></span><br><span class="line">grant all privileges on *.* to <span class="string">'slave'</span>@<span class="string">'192.168.22.128'</span> identified by <span class="string">'slave123'</span> with grant option;</span><br><span class="line"><span class="comment"># 刷新权限</span></span><br><span class="line">flush privileges;</span><br><span class="line"><span class="comment"># 这里要注意，真实的正式环境配置需要规定从库的连接IP，不能设置为*。</span></span><br><span class="line"><span class="comment"># 密码不能设置过于简单，最少是字母和数字组合的6位，否则会报错。</span></span><br></pre></td></tr></table></figure><p>查看主库状态<code>show master status</code><br><img src="/架构之路-mysql主从复制配置篇/img/4.png"><br>这里的<code>File</code>就是主库的<code>binlog</code>文件。</p><h5 id="从库配置"><a href="#从库配置" class="headerlink" title="从库配置"></a>从库配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line"><span class="comment"># 这里只需要配置一个标识就行(一定要比主库的标识数字小)</span></span><br><span class="line">server_id=2</span><br><span class="line"><span class="comment"># 重启mysql服务</span></span><br><span class="line">systemctl restart mysqld</span><br><span class="line"><span class="comment"># 关闭slave</span></span><br><span class="line">stop slave</span><br><span class="line"><span class="comment"># 给从库配置主库参数</span></span><br><span class="line">mysql&gt; change master to</span><br><span class="line">-&gt; master_host=<span class="string">"ip地址"</span>，</span><br><span class="line">-&gt; master_user=<span class="string">"授权时指定的用户名"</span>，</span><br><span class="line">-&gt; master_password=<span class="string">"用户密码"</span>，</span><br><span class="line">-&gt; master_log_file=<span class="string">"binlog日志"</span>，</span><br><span class="line">-&gt; master_log_pos=偏移量；</span><br><span class="line"><span class="comment"># 重启从库服务</span></span><br><span class="line">start slave</span><br><span class="line"><span class="comment"># 测试是否正常连接</span></span><br><span class="line">show slave status \G;</span><br><span class="line"><span class="comment"># 如果报错error connecting to master 'repluse@192.168.22.130:3306' - retry-time: 60 retries:1</span></span><br><span class="line"><span class="comment"># 请检查密码是不是配置错了</span></span><br></pre></td></tr></table></figure><h5 id="最后测试同步"><a href="#最后测试同步" class="headerlink" title="最后测试同步"></a>最后测试同步</h5><p>再主库创建一个数据表，然后刷新从库看看是否同步成功。<br><img src="/架构之路-mysql主从复制配置篇/img/5.gif"></p><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>总体流程下来很简单、流程也不复杂、出现奇怪问题的几率小。<br>如果在配置中遇到问题，可在评论区提问，我会第一时间回复。<br><strong>预告：下一篇是读写分离的配置</strong></p>]]></content>
     
@@ -432,28 +455,6 @@
     
     
       <category term="php扩展类" scheme="http://www.daichongweb.com/tags/php%E6%89%A9%E5%B1%95%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WEB性能测试-并发测试</title>
-    <link href="http://www.daichongweb.com/WEB%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95/"/>
-    <id>http://www.daichongweb.com/WEB性能测试-并发测试/</id>
-    <published>2019-09-18T07:07:45.000Z</published>
-    <updated>2020-08-19T03:46:29.149Z</updated>
-    
-    <content type="html"><![CDATA[<p><b>前篇回忆：</b></p><p>&emsp;前两篇介绍了<a>redis</a>队列如何处理订单和<a>JMeter</a>的环境配置及安装方法，这篇根据程序开发的逻辑和习惯来解决几个问题：</p><p>&emsp;&emsp;（1）JMeter并发测试的基本使用。<br>&emsp;&emsp;（2）<a>redis</a>和<a>mysql</a>相比的性能差距如何？<br>&emsp;&emsp;（3）大量的并发和请求下<a>redis</a>、<a>mysql</a>、<a>nginx</a>各自会出现的问题？<br>&emsp;&emsp;（4）遇到并发带来各种各样的问题如何解决？<br><a id="more"></a></p><p><b>问题一：<sup>JMeter并发测试的基本使用<sup></sup></sup></b></p><p>&emsp;（1）设置系统语言：Options-&gt;Choose Lanuage 里选择适合你的语言。<br>&emsp;（2）添加线程组：<br><img src="/WEB性能测试-并发测试/img/plan.png"><br>&emsp;（3）设置线程属性：<br>&emsp;&emsp;线程数：也就是并发数。<br>&emsp;&emsp;Ramp-Up时间（秒）：并发时间，0为同时并发。<br>&emsp;&emsp;循环次数：重复次数。<br><img src="/WEB性能测试-并发测试/img/plan1.png"><br>&emsp;（4）添加HTTP请求：<br>&emsp;&emsp;协议：http或https。<br>&emsp;&emsp;服务器名称或IP：请求地址。<br>&emsp;&emsp;路径：要请求的路由或文件路径。<br>&emsp;&emsp;参数：添加请求参数。<br><img src="/WEB性能测试-并发测试/img/plan2.png"><br>&emsp;（5）添加察看结果树：可查看发送的数据，返回的结果等。<br><img src="/WEB性能测试-并发测试/img/plan3.png"><br>&emsp;（6）添加汇总报告：可查看错误率，吞吐量等。<br><img src="/WEB性能测试-并发测试/img/plan4.png"></p><p><b>问题二：<sup>大量的并发和请求下<a>redis</a>、<a>mysql</a>、<a>nginx</a>各自会出现的问题？<sup></sup></sup></b></p><p>&emsp;在同时并发2000的情况下（因为redis队列为异步，所以这里不考虑redis出列的性能问题）：<br>&emsp;<a>mysql</a>：错误率87.9%，成功条数241。<br><img src="/WEB性能测试-并发测试/img/plan5.png"><br>&emsp;<a>redis</a>：错误率0.35%，成功条数1993。<br><img src="/WEB性能测试-并发测试/img/plan5.png"><br>&emsp;总结：从以上结果可以看出在高并发场景下msyql扛不住压力错误率高。<br>&emsp;结论：redis在处理并发性能优于mysql。</p><p><b>问题三：大量的并发和请求下<a>redis</a>、<a>mysql</a>、<a>nginx</a>各自会出现的问题？</b></p><p>&emsp;3000并发循环请求3次相当于9000的次请求的情况下：<br>&emsp;&emsp;（1）nginx报错：<a>Too many open files</a>（打开的文件数超过限制nginx默认为1024）。<br>&emsp;&emsp;（2）redis报错：<a>RDB: 2 MB of memory used by copy-on-write</a>。<br>&emsp;&emsp;（3）mysql直接写入失败。</p><p><b>问题四：<sup>遇到并发带来各种各样的问题如何解决？<sup></sup></sup></b></p><p>&emsp;（1）<a>nginx错误分析：最大打开文件数超过限制</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 查看系统打开文件值 Max open files</span><br><span class="line">cat /proc/`ps -ef | grep nginx|grep -v grep|head -1|awk &apos;&#123;print $2&#125;&apos;`/limits</span><br><span class="line"># 修改</span><br><span class="line">vi /etc/systemd/ststem.conf</span><br><span class="line"># 修改两个值</span><br><span class="line">DefaultLimitNOFILE = 102400</span><br><span class="line">DefaultLimitNPROC = 102400</span><br><span class="line"># 随后重启系统</span><br></pre></td></tr></table></figure><br>&emsp;（2）<a>redis错误分析：保存频繁导致内存不够了。</a>（暂未找到最合适的方案）<br>&emsp;点击查看更详细的错误分析:<a href="https://yq.aliyun.com/articles/629296" target="_blank" rel="noopener">Redis-redis异常解决以及日常命令</a></p><p>&emsp;（3）<a>mysql</a>暂没找到方案。</p><p><b>总结：</b></p><p>&emsp;相同的配置&amp;高并发场景下<a>redis</a>比<a>mysql</a>要可靠很多，伴随着并发越来越高服务器、程序、数据库各方面的问题扑面而来，不要慌，这才是你真正需要学习的东西！生于忧患死于安乐，只有不断的处理问题，才能真正的驾驭程序！祝你早日成功！！！</p><p>&emsp;本文最高测试并发在3000循环次数为3次，服务器环境为lnmrp,系统配置为2核4G6M,因为redis的问题没有解决不能做更高的并发测试。并且还有一个redis的问题没有解决，待我研究几日说。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;b&gt;前篇回忆：&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;&amp;emsp;前两篇介绍了&lt;a&gt;redis&lt;/a&gt;队列如何处理订单和&lt;a&gt;JMeter&lt;/a&gt;的环境配置及安装方法，这篇根据程序开发的逻辑和习惯来解决几个问题：&lt;/p&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;（1）JMeter并发测试的基本使用。&lt;br&gt;&amp;emsp;&amp;emsp;（2）&lt;a&gt;redis&lt;/a&gt;和&lt;a&gt;mysql&lt;/a&gt;相比的性能差距如何？&lt;br&gt;&amp;emsp;&amp;emsp;（3）大量的并发和请求下&lt;a&gt;redis&lt;/a&gt;、&lt;a&gt;mysql&lt;/a&gt;、&lt;a&gt;nginx&lt;/a&gt;各自会出现的问题？&lt;br&gt;&amp;emsp;&amp;emsp;（4）遇到并发带来各种各样的问题如何解决？&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="测试" scheme="http://www.daichongweb.com/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>外卖红包免费领，饿了吗、美团、淘宝、京东红包</title>
+    <url>/%E5%A4%96%E5%8D%96%E7%BA%A2%E5%8C%85%E5%85%8D%E8%B4%B9%E9%A2%86%EF%BC%8C%E9%A5%BF%E4%BA%86%E5%90%97%E3%80%81%E7%BE%8E%E5%9B%A2%E3%80%81%E6%B7%98%E5%AE%9D%E3%80%81%E4%BA%AC%E4%B8%9C%E7%BA%A2%E5%8C%85/</url>
+    <content><![CDATA[<h4 id="外卖红包"><a href="#外卖红包" class="headerlink" title="外卖红包"></a>外卖红包</h4><p>今天给经常点外卖的朋友推荐一个好东西，每天点外卖前可以花2秒钟领个美团外卖红包或者饿了么红包，最高66元，每天都能领，无上限！用了红包后你可能发现点外卖比直接去店里吃还要便宜，一天2顿饭，能省十多块钱！领券之后还能返现金，现金金额为订单金额<font color="#ff5722">1%-5%</font>，快来试试吧！</p>
+<img src="/外卖红包免费领，饿了吗、美团、淘宝、京东红包/1.jpg">
+]]></content>
+      <tags>
+        <tag>撸羊毛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JetBrains2020全家桶激活</title>
     <url>/JetBrains2020%E5%85%A8%E5%AE%B6%E6%A1%B6%E6%BF%80%E6%B4%BB/</url>
     <content><![CDATA[<h4 id="官方下载最新版"><a href="#官方下载最新版" class="headerlink" title="官方下载最新版"></a>官方下载最新版</h4><a href="https://www.jetbrains.com" target="_blank" rel="noopener">JetBrains官网下载</a>
@@ -1479,19 +1489,6 @@
       </tags>
   </entry>
   <entry>
-    <title>liunx重装系统后ssh连接认证的问题</title>
-    <url>/liunx%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8Essh%E8%BF%9E%E6%8E%A5%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<figure class="highlight plain"><figcaption><span>[命令行报错提示]</span></figcaption><table><tr><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line"></span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line"></span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line"></span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line"></span><br><span class="line">The fingerprint for the ECDSA key sent by the remote host is</span><br><span class="line"></span><br><span class="line">SHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.</span><br><span class="line"></span><br><span class="line">Please contact your system administrator.</span><br><span class="line"></span><br><span class="line">Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.</span><br><span class="line"></span><br><span class="line">Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3</span><br><span class="line"></span><br><span class="line">ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.</span><br><span class="line"></span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure>
-<p>对于一个小白来说，这个是完全看不懂的，下面就告诉大家如何解决这个问题。</p>
-<p>首先用ssh第一次连接sever,sever会生成一个公钥和一个私钥，私钥存在连接方的本地，系统重装后sever会重新生成一个公钥，然后连接方的私钥已经和sever的公钥不匹配，导致报错无法登录。</p>
-<p>解决方法：</p>
-<p>ssh-keygen -R xx.xx.xx.xx 后面跟ip即可删除指定服务器的公钥文件，再次连接时重新生成，并覆盖掉连接方的私钥。</p>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>linux重装系统后ssh连接认证的问题</title>
     <url>/Linux%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8Essh%E8%BF%9E%E6%8E%A5%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<figure class="highlight plain"><figcaption><span>[命令行报错提示]</span></figcaption><table><tr><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line"></span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line"></span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line"></span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line"></span><br><span class="line">The fingerprint for the ECDSA key sent by the remote host is</span><br><span class="line"></span><br><span class="line">SHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.</span><br><span class="line"></span><br><span class="line">Please contact your system administrator.</span><br><span class="line"></span><br><span class="line">Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.</span><br><span class="line"></span><br><span class="line">Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3</span><br><span class="line"></span><br><span class="line">ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.</span><br><span class="line"></span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure>
@@ -1502,6 +1499,19 @@
 ]]></content>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>liunx重装系统后ssh连接认证的问题</title>
+    <url>/liunx%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8Essh%E8%BF%9E%E6%8E%A5%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<figure class="highlight plain"><figcaption><span>[命令行报错提示]</span></figcaption><table><tr><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line"></span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line"></span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line"></span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line"></span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line"></span><br><span class="line">The fingerprint for the ECDSA key sent by the remote host is</span><br><span class="line"></span><br><span class="line">SHA256:Qv4XPuXFuO1G8s0teCXRANvVnZy1jjIFKkp8yfJgLeA.</span><br><span class="line"></span><br><span class="line">Please contact your system administrator.</span><br><span class="line"></span><br><span class="line">Add correct host key in /c/Users/Administrator/.ssh/known_hosts to get rid of this message.</span><br><span class="line"></span><br><span class="line">Offending ECDSA key in /c/Users/Administrator/.ssh/known_hosts:3</span><br><span class="line"></span><br><span class="line">ECDSA host key for 58.87.72.33 has changed and you have requested strict checking.</span><br><span class="line"></span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure>
+<p>对于一个小白来说，这个是完全看不懂的，下面就告诉大家如何解决这个问题。</p>
+<p>首先用ssh第一次连接sever,sever会生成一个公钥和一个私钥，私钥存在连接方的本地，系统重装后sever会重新生成一个公钥，然后连接方的私钥已经和sever的公钥不匹配，导致报错无法登录。</p>
+<p>解决方法：</p>
+<p>ssh-keygen -R xx.xx.xx.xx 后面跟ip即可删除指定服务器的公钥文件，再次连接时重新生成，并覆盖掉连接方的私钥。</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
