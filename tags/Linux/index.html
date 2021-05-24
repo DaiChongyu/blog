@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: linux | Daichong&#39;s Blog</title>
+  <title>Tag: Linux | Daichong&#39;s Blog</title>
   
   <meta name="keywords" content="戴崇博客,戴崇技术博客,php技术博客,hexo博客,web技术博客">
   
@@ -277,12 +277,6 @@
         
           
         
-          
-        
-          
-        
-          
-        
       
     
     
@@ -300,303 +294,8 @@
       
         
   <h2 class="title">
-    <a href="../../解决nginx循环重定向问题/">
-      解决nginx循环重定向问题
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-09-09</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p><b>一、什么是重定向、循环重定向</b></p>
-<p>&emsp;（1）重定向是指浏览器先访问了服务器A，然后服务器A带着请求的参数（header、状态码3xx）返回到地址为B的服务器上。<br>&emsp;（2）循环重定向是指服务器A重定向到了服务器B，服务器B由于某种原因又重定向到了A，这样就构成了重定向循环。</p>
-<p><b>二、3xx重定向状态码</b></p>
-<p>&emsp;（1）301(Move Permanently)：永久性重定向，请求的资源被分配了新的URI，以后都使用这个（get）。<br>&emsp;（2）302(Found)：临时性重定向，请求的资源被分配了新的URI，本次使用这个（get，允许缓存）。<br>&emsp;（3）303(See Other)：请求资源存在另一个URI，应使用get方法获取请求资源。<br>&emsp;（4）307(Temporary Redirect)：类似于302，只是302的POST方法会变为GET，而307的不会。<br></p>
-      
-        <div class="readmore">
-          <a href="../../解决nginx循环重定向问题/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>linux</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../Centos7.6搭建lnmp环境/">
-      Centos7.6搭建lnmp环境
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-09-07</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p><b>一、前言</b></p>
-<p>&emsp;搭建程序运行环境是程序员必不可少的技能！<br>&emsp;今天买了个新的云服务器，需要搭建环境，借此机会自己也熟悉了一番搭建的流程，做个日记供以后参考。<br>&emsp;本篇大部分命令仅适合<font color="#ff5722">Centos7.x</font>的系统使用。<br>&emsp;<font color="#ff5722">lnmp</font>是指<font color="#ff5722">Liunx、Nginx、Mysql和Php</font>。</p>
-<p>&emsp;目录：<br>&emsp;（1）安装<font color="#ff5722">Nginx1.4</font>。<br>&emsp;（2）安装<font color="#ff5722">php7.2</font>。<br>&emsp;（3）安装<font color="#ff5722">Mariadb10.2</font>。<br>&emsp;（4）总结。<br></p>
-      
-        <div class="readmore">
-          <a href="../../Centos7.6搭建lnmp环境/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>linux</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../使用htpasswd为web网站增加安全性/">
-      使用htpasswd为web网站增加安全性
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="http://www.daichongweb.com" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Daichongweb</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-13</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <blockquote><p>一.引言</p>
-</blockquote>
-<font color="#ff5722">什么是 htpasswd ?</font><br>&emsp;(1)htpasswd是开源 http 服务器apache httpd的一个命令工具，用于生成 http 基本认证的密码文件。<br>&emsp;(2)nginx底层提供了 <a href="http://www.nginx.cn/doc/standard/httpauthbasic.html" target="_blank" rel="noopener">HttpAuthBasic</a>模块，这个模块支持最基本的http认证，这是http协议支持的。当你访问网站时候会弹出一个对话框要求你输入账号密码,只要输入正确才能访问对应的网站。<br><font color="#ff5722">如果认证失败会怎么样 ?</font><br>
-      
-        <div class="readmore">
-          <a href="../../使用htpasswd为web网站增加安全性/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>linux</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="../../Linux重装系统后ssh连接认证的问题/">
-      linux重装系统后ssh连接认证的问题
+    <a href="../../liunx重装系统后ssh连接认证的问题/">
+      liunx重装系统后ssh连接认证的问题
     </a>
   </h2>
 
@@ -666,7 +365,7 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>linux</a>
+          <a href="" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Linux</a>
         
       </div>
     
@@ -897,7 +596,7 @@
 </header>
 
     <div class='content material'>
-      <a href="../Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="../composer/" style="font-size: 14px; color: #999">composer</a> <a href="../git/" style="font-size: 14px; color: #999">git</a> <a href="../hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="../java/" style="font-size: 14px; color: #999">java</a> <a href="../jquery/" style="font-size: 18px; color: #7e7e7e">jquery</a> <a href="../js/" style="font-size: 14px; color: #999">js</a> <a href="../laravel/" style="font-size: 20px; color: #707070">laravel</a> <a href="" style="font-size: 20px; color: #707070">linux</a> <a href="../mysql/" style="font-size: 22px; color: #636363">mysql</a> <a href="../nginx/" style="font-size: 14px; color: #999">nginx</a> <a href="../node/" style="font-size: 14px; color: #999">node</a> <a href="../php/" style="font-size: 24px; color: #555">php</a> <a href="../phpExcel/" style="font-size: 14px; color: #999">phpExcel</a> <a href="../php扩展类/" style="font-size: 18px; color: #7e7e7e">php扩展类</a> <a href="../redis/" style="font-size: 14px; color: #999">redis</a> <a href="../sublime/" style="font-size: 16px; color: #8b8b8b">sublime</a> <a href="../tool/" style="font-size: 14px; color: #999">tool</a> <a href="../tp5/" style="font-size: 16px; color: #8b8b8b">tp5</a> <a href="../vue/" style="font-size: 16px; color: #8b8b8b">vue</a> <a href="../walle/" style="font-size: 16px; color: #8b8b8b">walle</a> <a href="../小程序支付/" style="font-size: 16px; color: #8b8b8b">小程序支付</a> <a href="../开发工具/" style="font-size: 20px; color: #707070">开发工具</a> <a href="../微信小程序/" style="font-size: 16px; color: #8b8b8b">微信小程序</a> <a href="../微信支付/" style="font-size: 18px; color: #7e7e7e">微信支付</a> <a href="../撸羊毛/" style="font-size: 16px; color: #8b8b8b">撸羊毛</a> <a href="../架构/" style="font-size: 16px; color: #8b8b8b">架构</a> <a href="../测试/" style="font-size: 16px; color: #8b8b8b">测试</a> <a href="../浏览器/" style="font-size: 14px; color: #999">浏览器</a>
+      <a href="" style="font-size: 14px; color: #999">Linux</a> <a href="../composer/" style="font-size: 14px; color: #999">composer</a> <a href="../git/" style="font-size: 14px; color: #999">git</a> <a href="../hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="../java/" style="font-size: 14px; color: #999">java</a> <a href="../jquery/" style="font-size: 18px; color: #7e7e7e">jquery</a> <a href="../js/" style="font-size: 14px; color: #999">js</a> <a href="../laravel/" style="font-size: 20px; color: #707070">laravel</a> <a href="../linux/" style="font-size: 20px; color: #707070">linux</a> <a href="../mysql/" style="font-size: 22px; color: #636363">mysql</a> <a href="../nginx/" style="font-size: 14px; color: #999">nginx</a> <a href="../node/" style="font-size: 14px; color: #999">node</a> <a href="../php/" style="font-size: 24px; color: #555">php</a> <a href="../phpExcel/" style="font-size: 14px; color: #999">phpExcel</a> <a href="../php扩展类/" style="font-size: 18px; color: #7e7e7e">php扩展类</a> <a href="../redis/" style="font-size: 14px; color: #999">redis</a> <a href="../sublime/" style="font-size: 16px; color: #8b8b8b">sublime</a> <a href="../tool/" style="font-size: 14px; color: #999">tool</a> <a href="../tp5/" style="font-size: 16px; color: #8b8b8b">tp5</a> <a href="../vue/" style="font-size: 16px; color: #8b8b8b">vue</a> <a href="../walle/" style="font-size: 16px; color: #8b8b8b">walle</a> <a href="../小程序支付/" style="font-size: 16px; color: #8b8b8b">小程序支付</a> <a href="../开发工具/" style="font-size: 20px; color: #707070">开发工具</a> <a href="../微信小程序/" style="font-size: 16px; color: #8b8b8b">微信小程序</a> <a href="../微信支付/" style="font-size: 18px; color: #7e7e7e">微信支付</a> <a href="../撸羊毛/" style="font-size: 16px; color: #8b8b8b">撸羊毛</a> <a href="../架构/" style="font-size: 16px; color: #8b8b8b">架构</a> <a href="../测试/" style="font-size: 16px; color: #8b8b8b">测试</a> <a href="../浏览器/" style="font-size: 14px; color: #999">浏览器</a>
     </div>
   </section>
 
@@ -1013,6 +712,207 @@
     $(function() {
       Waves.attach('.flat-btn', ['waves-button']);
       Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["/image/bg.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["/image/bg.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="../../js/app.js"></script>
+
+
+  <script src="../../js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="/js/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="/js/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>
+    setLoadingBarProgress(100);
+
+    setLoadingBarProgress(100);
+    window.onerror = function () { return true; }
+    console.log([
+      "                                             \,---\,                                                                                                       ",
+      "\,---\,               \,--\,             \,--\.\' \|                                                               \,---\,                                 \,'  \, ",
+      "    \,---\.\'\|             \,--\.\'\|             \|  \|  \:       \,---\.        \,---\,                     \.---\.          \,---\.\'\|                  \,---\.       \,\-\+\-\,\.\' ",
+      "\_ \| ",
+      "    \|   \| \:             \|  \|\,              \:  \:  \:      \'   \,\'\\   \,\-\+\-\. \/  \|  \,\-\-\-\-\.\_\,\.        \/\. \.\/\|          \|   \| \:                 \'   \,\'\\   \,\-\+\-\. \;   \, ",
+      "\|\| ",
+      "    \|   \| \|   \,\-\-\.\-\-\.   \`\-\-\'\_       \,\-\-\-\.  \:  \|  \|\,\-\-\. \/   \/   \| \,\-\-\.\'\|\'   \| \/   \/  \' \/     \.\-\'\-\. \' \|   \,\-\-\-\.  \:   \: \:         \,\-\-\-\.  \/   \/   \| \,\-\-\.\'\|\'   \|  ",
+      "\|\| ",
+      "  \,\-\-\.\_\_\| \|  \/       \\  \,\' \,\'\|     \/     \\ \|  \:  \'   \|\.   \; \,\. \:\|   \|  \,\"\' \|\|   \:     \|    \/\_\_\_\/ \\\: \|  \/     \\ \:     \|\,\-\.     \/     \\\.   \; \,\. \:\|   \|  \,\'\, \|  ",
+      "\|\, ",
+      " \/   \,\'   \| \.\-\-\.  \.\-\. \| \'  \| \|    \/    \/ \' \|  \|   \/\' \:\'   \| \|\: \:\|   \| \/  \| \|\|   \| \.\\  \. \.\-\'\.\. \'   \' \. \/    \/  \|\|   \: \'  \|    \/    \/ \'\'   \| \|\: \:\|   \| \/  \| ",
+      "\|\-\-\'  ",
+      "\.   \'  \/  \|  \\\_\_\\\/\: \. \. \|  \| \:   \.    \' \/  \'  \:  \| \| \|\'   \| \.\; \:\|   \| \|  \| \|\.   \; \'\;  \|\/\_\_\_\/ \\\:     \'\.    \' \/ \|\|   \|  \/ \:   \.    \' \/ \'   \| \.\; \:\|   \: \|  \| ",
+      "\,     ",
+      "\'   \; \|\:  \|  \,\" \.\-\-\.\; \| \'  \: \|\_\_ \'   \; \:\_\_ \|  \|  \' \| \:\|   \:    \|\|   \| \|  \|\/ \'   \.   \. \|\.   \\  \' \.\\   \'   \;   \/\|\'   \: \|\: \|   \'   \; \:\_\_\|   \:    \|\|   \: \|  ",
+      "\|\/      ",
+      "\|   \| \'\/  \' \/  \/  \,\.  \| \|  \| \'\.\'\|\'   \| \'\.\'\|\|  \:  \:\_\:\,\' \\   \\  \/ \|   \| \|\-\-\'   \`\-\-\-\`\-\'\| \| \\   \\   \' \\ \|\'   \|  \/ \|\|   \| \'\/ \:\_\_\_\'   \| \'\.\'\|\\   \\  \/ \|   \| ",
+      "\|\`\-\'       ",
+      "\|  \ \:    \:\|\;  \:   \.\'   \\\;  \:    \;\|   \:    \:\|  \| \,\'      \`\-\-\-\-\'  \|   \|\/       \.\'\_\_\/\\\_\: \|  \\   \\  \|\-\-\" \|   \:    \|\|   \:    \/  \.\\   \:    \: \`\-\-\-\-\'  \|   ",
+      "\;\/   ",
+      " \\   \\  \/  \|  \,     \.\-\.\/\|  \,   \/  \\   \\  \/ \`\-\-\'\'                \'\-\-\-\'        \|   \:    \:   \\   \\ \|     \\   \\  \/ \/    \\  \/\\  \; \\   \\  \/          ",
+      "\'\-\-\-\'            ",
+      "  \`\-\-\-\-\'    \`\-\-\`\-\-\-\'     \-\-\-\`\-\'    \`\-\-\-\-\'                                     \\   \\  \/     \'\-\-\-\"       \`\-\-\-\-\'  \`\-\'\-\-\-\-\'  \`\-\-\" ",
+      "\`\-\-\-\-\'  ",
+      "                                                                               \`\-\-\`\-\'",
+    ].join('\n'));
+    console.log('邮箱：daichongweb@foxmail.com');
+  </script>
+</body>
+
+</html>', 'waves-float']);
       Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
       Waves.attach('.flat-box', ['waves-block']);
       Waves.attach('.float-box', ['waves-block', 'waves-float']);
